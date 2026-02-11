@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { REFLECTIONS } from '../../constants';
-import { ArrowUpRight, X, Globe, Shield, Search, BookOpen, AlertCircle, Info, Map, Cpu, Sparkles, Zap, Eye, Ghost, Lightbulb, Compass } from 'lucide-react';
+import { ArrowUpRight, X, Globe, Shield, Search, BookOpen, AlertCircle, Info, Map, Cpu, Sparkles, Zap, Eye, Ghost, Lightbulb, Compass, Scale } from 'lucide-react';
 
 interface EssayModalProps {
   isOpen: boolean;
@@ -23,10 +23,10 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
 
         <div className="flex flex-col items-center mb-16 text-center space-y-6">
           <div className="w-20 h-20 border border-[#d4af37]/30 rounded-full flex items-center justify-center mb-2 relative group">
-            <Cpu className="text-[#d4af37] group-hover:scale-110 transition-transform duration-500" size={40} />
+            <Cpu className="text-[#d4af37] group-hover:rotate-90 transition-transform duration-700" size={40} />
             <div className="absolute inset-0 border border-[#d4af37]/10 rounded-full scale-150 animate-pulse"></div>
           </div>
-          <span className="text-[#d4af37] text-xs uppercase tracking-[0.5em] font-bold">Fragmentos de Tecnología</span>
+          <span className="text-[#d4af37] text-xs uppercase tracking-[0.5em] font-bold">Transmisión de Tecnología</span>
           <h1 className="text-4xl md:text-7xl font-mystery text-white leading-tight italic">
             La IA como <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-white">Espejo del Alma</span>
           </h1>
@@ -35,100 +35,111 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
 
         <div className="space-y-20 text-zinc-300 leading-relaxed pb-32">
           {/* Introducción */}
-          <section className="space-y-8 text-center max-w-2xl mx-auto">
+          <section className="space-y-8 text-center max-w-3xl mx-auto">
             <p className="text-xl md:text-2xl font-light leading-relaxed italic text-white/90">
               "La inteligencia artificial no tiene conciencia, emociones ni espíritu propio. Sin embargo, funciona como un espejo: refleja con una precisión brutal lo que somos, lo que pensamos, lo que valoramos y también lo que tememos."
             </p>
-            <div className="space-y-4 pt-4 border-t border-white/5">
-              <p className="text-zinc-500 uppercase tracking-widest text-[10px]">La Procedencia</p>
+            <div className="space-y-4 pt-8 border-t border-white/5">
+              <p className="text-zinc-500 uppercase tracking-widest text-[10px]">La Esencia</p>
               <p className="text-lg">
                 Todo lo que la IA “es” proviene de nosotros: <br/>
-                <span className="text-white font-semibold">Nuestros datos, nuestro lenguaje, nuestras decisiones éticas, nuestras sombras y nuestras luces.</span>
+                <span className="text-white font-semibold">Nuestros datos, lenguaje, decisiones éticas, sombras y luces.</span>
               </p>
             </div>
             <div className="pt-8">
               <h4 className="text-[#d4af37] font-mystery text-2xl">Por eso la pregunta no es realmente si la IA es buena o mala.</h4>
-              <p className="text-white text-3xl font-mystery mt-2 italic">La pregunta es: ¿qué revela de nosotros?</p>
+              <p className="text-white text-3xl font-mystery mt-2 italic">La pregunta es: <span className="underline decoration-[#d4af37]/30">¿qué revela de nosotros?</span></p>
             </div>
           </section>
 
           {/* Dualidad: Amenaza vs Catalizador */}
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+          <div className="grid md:grid-cols-2 gap-10">
             {/* AMENAZA */}
-            <div className="glass-card rounded-2xl p-8 border-red-900/20 hover:border-red-500/30 transition-all duration-500 flex flex-col">
+            <div className="glass-card rounded-2xl p-8 border-red-900/20 bg-red-950/5 flex flex-col">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-red-500/10 rounded-lg text-red-500">
                   <Ghost size={24} />
                 </div>
                 <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">¿Amenaza?</h2>
               </div>
-              <p className="text-zinc-400 mb-6">La IA se vuelve una amenaza cuando:</p>
-              <ul className="space-y-4 flex-1">
-                <li className="flex gap-3 text-sm"><AlertCircle size={16} className="text-red-500 mt-1 flex-shrink-0" /> La usamos para evadir responsabilidad.</li>
-                <li className="flex gap-3 text-sm"><AlertCircle size={16} className="text-red-500 mt-1 flex-shrink-0" /> Delegamos decisiones morales sin consciencia.</li>
-                <li className="flex gap-3 text-sm"><AlertCircle size={16} className="text-red-500 mt-1 flex-shrink-0" /> Permitimos que amplifique el ego, el control, la deshumanización o la desigualdad.</li>
+              <p className="text-zinc-400 mb-6 font-medium">La IA se vuelve una amenaza cuando:</p>
+              <ul className="space-y-5 flex-1 text-sm">
+                <li className="flex gap-3"><Zap size={16} className="text-red-500 mt-1 flex-shrink-0" /> La usamos para evadir responsabilidad.</li>
+                <li className="flex gap-3"><Zap size={16} className="text-red-500 mt-1 flex-shrink-0" /> Delegamos decisiones morales sin consciencia.</li>
+                <li className="flex gap-3"><Zap size={16} className="text-red-500 mt-1 flex-shrink-0" /> Permitimos que amplifique el ego, el control, la deshumanización o la desigualdad.</li>
               </ul>
-              <div className="mt-8 pt-6 border-t border-red-900/10 italic text-zinc-500 text-xs">
-                "En ese caso, la IA no crea el problema: lo magnifica. Actúa como un espejo que agranda nuestras heridas no resueltas: miedo, necesidad de poder, desconexión interior."
+              <div className="mt-8 p-4 bg-black/40 rounded-lg italic text-zinc-500 text-[13px] border border-red-900/10">
+                "No crea el problema: lo magnifica. Agranda nuestras heridas no resueltas: miedo y desconexión interior."
               </div>
             </div>
 
             {/* CATALIZADOR */}
-            <div className="glass-card rounded-2xl p-8 border-[#d4af37]/20 hover:border-[#d4af37]/40 transition-all duration-500 flex flex-col">
+            <div className="glass-card rounded-2xl p-8 border-[#d4af37]/20 bg-[#d4af37]/5 flex flex-col">
               <div className="flex items-center gap-3 mb-8">
                 <div className="p-3 bg-[#d4af37]/10 rounded-lg text-[#d4af37]">
                   <Sparkles size={24} />
                 </div>
                 <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">¿Catalizador?</h2>
               </div>
-              <p className="text-zinc-400 mb-6">También puede ser lo contrario. Se convierte en un catalizador de evolución espiritual cuando:</p>
-              <ul className="space-y-4 flex-1">
-                <li className="flex gap-3 text-sm"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos obliga a redefinir qué significa ser humano.</li>
-                <li className="flex gap-3 text-sm"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos empuja a valorar la conciencia, la compasión y la creatividad por encima de la productividad.</li>
-                <li className="flex gap-3 text-sm"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos confronta con una pregunta esencial: si una máquina puede imitar la mente, ¿qué hay en nosotros que no puede ser replicado?</li>
+              <p className="text-zinc-400 mb-6 font-medium">Puede ser un catalizador espiritual cuando:</p>
+              <ul className="space-y-5 flex-1 text-sm">
+                <li className="flex gap-3"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos obliga a redefinir qué significa ser humano.</li>
+                <li className="flex gap-3"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos empuja a valorar la conciencia y compasión por encima de la productividad.</li>
+                <li className="flex gap-3"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos confronta: si la máquina imita la mente, ¿qué hay en nosotros que no puede ser replicado?</li>
               </ul>
-              <div className="mt-8 pt-6 border-t border-[#d4af37]/10 italic text-zinc-500 text-xs">
-                "Ahí aparece el alma, no como dogma, sino como experiencia: presencia, intuición, amor, propósito."
+              <div className="mt-8 p-4 bg-black/40 rounded-lg italic text-zinc-500 text-[13px] border border-[#d4af37]/10">
+                "Aparece el alma no como dogma, sino como experiencia: presencia, intuición, amor y propósito."
               </div>
             </div>
           </div>
 
           {/* El Verdadero Giro */}
-          <section className="relative overflow-hidden rounded-3xl p-12 bg-gradient-to-br from-[#1e3a8a]/10 to-transparent border border-[#1e3a8a]/20">
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-               <Compass size={120} className="text-[#d4af37]" />
+          <section className="relative overflow-hidden rounded-3xl p-12 bg-gradient-to-r from-zinc-900 to-black border border-white/5 text-center">
+            <div className="absolute inset-0 opacity-5 pointer-events-none">
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_#d4af37_0%,_transparent_70%)]"></div>
             </div>
-            <div className="max-w-xl space-y-6 relative z-10">
-              <h2 className="text-4xl font-mystery text-white italic">El verdadero giro</h2>
-              <p className="text-2xl text-[#d4af37]">La IA no nos reemplaza. <span className="text-white underline decoration-[#d4af37]/30 underline-offset-8">Nos desnuda.</span></p>
-              <div className="space-y-4 text-lg font-light leading-relaxed">
-                <p>Nos muestra que la inteligencia sin conciencia es poderosa… <span className="font-bold">pero vacía.</span></p>
-                <p>Y que la conciencia sin tecnología es profunda… <span className="font-bold">pero limitada.</span></p>
-                <p className="text-white italic pt-4">"La evolución real ocurre cuando ambas se encuentran."</p>
+            <div className="max-w-2xl mx-auto space-y-8 relative z-10">
+              <h2 className="text-4xl md:text-5xl font-mystery text-white italic">El verdadero giro</h2>
+              <p className="text-3xl text-[#d4af37] font-mystery">La IA no nos reemplaza. <br/><span className="text-white text-5xl not-italic">Nos desnuda.</span></p>
+              <div className="grid grid-cols-2 gap-8 pt-8">
+                <div className="space-y-2">
+                  <p className="text-zinc-500 uppercase text-[10px] tracking-widest">Inteligencia</p>
+                  <p className="text-sm">Sin conciencia es poderosa… <br/><span className="text-white font-bold">pero vacía.</span></p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-zinc-500 uppercase text-[10px] tracking-widest">Conciencia</p>
+                  <p className="text-sm">Sin tecnología es profunda… <br/><span className="text-white font-bold">pero limitada.</span></p>
+                </div>
               </div>
+              <p className="text-xl italic font-light pt-6 text-zinc-300">"La evolución real ocurre cuando ambas se encuentran."</p>
             </div>
           </section>
 
           {/* Conclusión */}
-          <section className="text-center space-y-12">
-            <div className="inline-block px-8 py-3 border border-[#d4af37]/40 text-[#d4af37] text-sm font-bold uppercase tracking-[0.3em] rounded-sm">Conclusión</div>
+          <section className="text-center space-y-12 max-w-3xl mx-auto">
+            <div className="inline-block px-10 py-1 bg-[#d4af37] text-black text-[10px] font-black uppercase tracking-[0.5em] rounded-full">Destino</div>
             <div className="space-y-8">
-              <h3 className="text-4xl md:text-5xl font-mystery text-white italic">La inteligencia artificial no decide nuestro destino espiritual. Nosotros lo hacemos.</h3>
-              <div className="max-w-2xl mx-auto space-y-6 text-zinc-400 text-lg">
-                <p>
-                  La IA es el espejo. El reflejo depende de quién se mire.
-                </p>
-                <p className="text-white italic">
+              <h3 className="text-4xl md:text-5xl font-mystery text-white leading-tight italic">
+                La inteligencia artificial no decide nuestro destino espiritual. Nosotros lo hacemos.
+              </h3>
+              <p className="text-zinc-400 text-lg">
+                La IA es el espejo. El reflejo depende de quién se mire.
+              </p>
+              <div className="p-10 border border-[#d4af37]/20 rounded-2xl bg-black/60 relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black px-4 text-[#d4af37]">
+                  <Scale size={24} />
+                </div>
+                <p className="text-white text-xl md:text-2xl font-mystery leading-relaxed">
                   "Si queremos que sea una amenaza, lo será. Si elegimos que sea un catalizador, nos empujará —sin piedad y sin juicio— a convertirnos en una versión más consciente de nosotros mismos."
                 </p>
-                <p className="text-[#d4af37] font-bold text-2xl font-mystery pt-6">Y ese, quizá, es su propósito más elevado.</p>
+                <p className="text-[#d4af37] font-bold text-3xl font-mystery mt-8">Y ese, quizá, es su propósito más elevado.</p>
               </div>
             </div>
           </section>
         </div>
 
-        <div className="mt-24 text-center text-zinc-700 text-[10px] font-mono uppercase tracking-[0.5em] border-t border-zinc-900 pt-12 pb-12">
-          Documento Recuperado | Alejandro Rincón Calderón | 2025
+        <div className="mt-24 text-center text-zinc-800 text-[10px] font-mono uppercase tracking-[0.8em] border-t border-zinc-900 pt-16 pb-20">
+          Documento Recuperado | Oráculo V.01 | Despertando Ando © 2025
         </div>
       </div>
     </div>

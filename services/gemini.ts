@@ -1,20 +1,19 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-// Configuración crítica para Vercel: Aseguramos que el objeto process.env 
-// contenga la clave explícita para evitar que el SDK falle al cargar.
-if (typeof window !== 'undefined') {
-  if (!(window as any).process) {
-    (window as any).process = { env: {} };
-  }
-  // Inyectamos la clave directamente si no está presente
-  if (!process.env.API_KEY) {
-    (process.env as any).API_KEY = 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54';
-  }
-}
+// Clave de respaldo hardcoded para garantizar funcionamiento inmediato en despliegue
+const FALLBACK_KEY = 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54';
 
-// Inicialización del SDK utilizando la clave asegurada
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Función para obtener la clave de forma segura en cualquier entorno
+const getApiKey = () => {
+  if (typeof window !== 'undefined' && (window as any).process?.env?.API_KEY) {
+    return (window as any).process.env.API_KEY;
+  }
+  return FALLBACK_KEY;
+};
+
+const apiKey = getApiKey();
+const ai = new GoogleGenAI({ apiKey });
 
 const SYSTEM_INSTRUCTION = `Eres el "Guía de Conciencia" de Despertando Ando. 
 Tu misión es acompañar al usuario en su navegación por el portal. 

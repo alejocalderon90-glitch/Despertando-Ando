@@ -14,7 +14,6 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 z-[250] bg-black/95 backdrop-blur-2xl flex justify-center overflow-y-auto animate-in fade-in duration-500">
       <div className="max-w-4xl w-full p-6 md:p-12 relative">
-        {/* Close Button */}
         <button 
           onClick={onClose}
           className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#d4af37]/20 rounded-full border border-white/10 text-[#d4af37] transition-all z-10"
@@ -22,7 +21,6 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           <X size={24} />
         </button>
 
-        {/* Header Decor */}
         <div className="flex flex-col items-center mb-16 text-center space-y-4">
           <div className="w-20 h-20 border border-[#d4af37]/30 rounded-full flex items-center justify-center mb-6 relative">
             <Globe className="text-[#d4af37] animate-pulse" size={40} />
@@ -35,23 +33,24 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           <p className="text-zinc-500 font-mono text-[10px] uppercase">Hash de Integridad: 88x92-ANT-SECRET-VERIFIED</p>
         </div>
 
-        {/* Content Structure */}
         <div className="space-y-16 text-zinc-300 leading-relaxed pb-24">
-          
           <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
               <AlertCircle className="text-[#d4af37]" size={20} />
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">1. ¿Qué dice la teoría conspirativa?</h2>
             </div>
-            <div className="glass-card p-8 rounded-lg border-zinc-800">
-              <p className="mb-4">
+            <div className="glass-card p-8 rounded-lg border-zinc-800 space-y-4">
+              <p>
                 En el modelo terraplanista moderno, la Tierra es un disco plano con el Polo Norte en el centro y la Antártida formando un <strong>anillo periférico de hielo</strong> que actúa como barrera natural.
               </p>
               <ul className="list-none space-y-4 text-sm text-zinc-400">
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Este "muro" supuestamente mide cientos de metros de altura, impidiendo que los océanos se derramen al vacío.</li>
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se argumenta que el <strong>Tratado Antártico de 1959</strong> es una conspiración global para prohibir la exploración libre.</li>
+                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Este "muro" supuestamente mide cientos de metros de altura, impidiendo que los océanos se derramen al vacío y ocultando tierras desconocidas.</li>
+                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se argumenta que el <strong>Tratado Antártico de 1959</strong> es una conspiración global para prohibir la exploración libre bajo vigilancia militar permanente.</li>
                 <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se mencionan anomalías magnéticas, pirámides ocultas y las expediciones del almirante Richard Byrd sacadas de contexto.</li>
               </ul>
+              <p className="text-zinc-500 italic text-xs pt-4 border-t border-zinc-800">
+                Esta idea es una metáfora de los "límites del conocimiento humano", pero presentada como realidad literal por sus defensores.
+              </p>
             </div>
           </section>
 
@@ -61,16 +60,16 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">2. La Realidad Científica</h2>
             </div>
             <p>
-              La Antártida es un <strong>continente real</strong> de unos 14 millones de km², cubierto en un 98% por una capa de hielo de 1,9 km de espesor. Lo que la teoría llama "muro de hielo" se refiere a las <strong>plataformas de hielo (ice shelves)</strong> que flotan sobre el océano.
+              La Antártida es un <strong>continente real</strong> de unos 14 millones de km², cubierto en un 98% por una capa de hielo promedio de 1,9 km de espesor. 
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded">
-                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Plataforma de Ross</h4>
-                <p className="text-sm text-zinc-500 leading-relaxed">Presenta un frente vertical de hasta 60 metros sobre el nivel del mar. Es una estructura natural impresionante, pero no un anillo infinito.</p>
+                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Plataformas de Hielo</h4>
+                <p className="text-sm text-zinc-500 leading-relaxed">Lo que la teoría llama "muro" son las <strong>ice shelves</strong> (como la de Ross) que tienen frentes verticales de hasta 60 metros sobre el nivel del mar.</p>
               </div>
               <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded">
-                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Masa Continental</h4>
-                <p className="text-sm text-zinc-500 leading-relaxed">Imágenes de NASA y ESA muestran claramente un continente irregular conectado a la geografía global, no una pared circular perfecta.</p>
+                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Imágenes Satelitales</h4>
+                <p className="text-sm text-zinc-500 leading-relaxed">NASA, ESA y otras agencias muestran claramente un continente irregular, no un anillo infinito ni una pared perfecta.</p>
               </div>
             </div>
           </section>
@@ -78,29 +77,27 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
               <Search className="text-[#d4af37]" size={20} />
-              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">3. Evidencia Verificable</h2>
+              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">3. Evidencia que desmiente el muro</h2>
             </div>
-            <div className="space-y-8">
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex-1 space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 p-1 bg-[#1e3a8a]/30 text-[#1e3a8a] rounded"><BookOpen size={14}/></div>
-                    <p className="text-sm"><span className="text-white font-bold">Circunnavegación:</span> Numerosos barcos han rodeado la Antártida entera en regatas como la Vendée Globe. La distancia recorrida coincide con un globo, no con un disco.</p>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 p-1 bg-[#1e3a8a]/30 text-[#1e3a8a] rounded"><BookOpen size={14}/></div>
-                    <p className="text-sm"><span className="text-white font-bold">GPS y Vuelos:</span> El sistema de posicionamiento global y los vuelos comerciales operan perfectamente bajo la premisa de una Tierra esférica.</p>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
+                  <p><span className="text-white font-bold">Circunnavegación:</span> Barcos rodean la Antártida entera en carreras como la Vendée Globe. La distancia coincide con un globo, no con un disco plano.</p>
                 </div>
-                <div className="flex-1 space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 p-1 bg-[#1e3a8a]/30 text-[#1e3a8a] rounded"><BookOpen size={14}/></div>
-                    <p className="text-sm"><span className="text-white font-bold">Presencia Humana:</span> Más de 70 bases de 30 países operan allí. Miles de científicos y turistas (70k anuales) exploran el área abiertamente.</p>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="mt-1 p-1 bg-[#1e3a8a]/30 text-[#1e3a8a] rounded"><BookOpen size={14}/></div>
-                    <p className="text-sm"><span className="text-white font-bold">Sol de 24 Horas:</span> En el verano antártico, el sol nunca se pone en el Polo Sur, algo imposible en un mapa plano.</p>
-                  </div>
+                <div className="flex gap-3">
+                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
+                  <p><span className="text-white font-bold">Vuelos y GPS:</span> Vuelos comerciales y sistemas GPS operan allí sin anomalías que sugieran una geometría plana.</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
+                  <p><span className="text-white font-bold">Sol de 24 Horas:</span> En verano, el sol no se pone en el Polo Sur, fenómeno imposible en un modelo de mapa plano.</p>
+                </div>
+                <div className="flex gap-3">
+                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
+                  <p><span className="text-white font-bold">Presencia Humana:</span> Más de 70 bases de 30 países operan allí. Unos 70,000 turistas visitan el continente anualmente.</p>
                 </div>
               </div>
             </div>
@@ -109,29 +106,27 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
               <Shield className="text-[#d4af37]" size={20} />
-              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">4. ¿Por qué el velo de misterio?</h2>
+              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">4. ¿Por qué parece el mayor secreto?</h2>
             </div>
-            <p>
-              La percepción de "secreto" nace de dos factores reales: <strong>Condiciones Extremas</strong> y el <strong>Tratado Antártico</strong>.
-            </p>
-            <div className="border-l-2 border-[#d4af37] pl-8 py-4 bg-[#d4af37]/5 italic text-zinc-400">
-              "El tratado declara la Antártida zona de paz, prohíbe actividades militares y minería, pero promueve la investigación científica abierta. No prohíbe visitas, solo las regula para proteger el ecosistema más frágil del mundo."
+            <div className="grid gap-6">
+              <p>El misterio se alimenta de las <strong>Condiciones Extremas</strong> (-89°C récord) y el <strong>Tratado Antártico (1959)</strong>.</p>
+              <div className="p-6 border-l-2 border-[#d4af37] bg-[#d4af37]/5 italic text-zinc-400 text-sm">
+                "El tratado declara la zona como área de paz, prohíbe actividades militares y minería comercial. No prohíbe visitas civiles, solo las regula para proteger el ecosistema y evitar contaminación ecológica."
+              </div>
             </div>
           </section>
 
           <section className="pt-12 border-t border-zinc-900 text-center space-y-6">
-             <div className="inline-block p-1 bg-[#d4af37]/20 rounded-full mb-4">
-                <div className="px-4 py-1 bg-[#d4af37] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Conclusión</div>
-             </div>
+             <div className="inline-block px-4 py-1 bg-[#d4af37] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Conclusión</div>
              <h3 className="text-3xl font-mystery text-white italic">Realidad vs. Metáfora</h3>
              <p className="max-w-2xl mx-auto text-zinc-400">
-               El "Muro de Hielo" como barrera física de un mundo plano es ficción conspirativa. Sin embargo, como <strong>metáfora</strong>, representa los límites de nuestro conocimiento y la necesidad de cuestionar lo establecido. La Antártida no oculta el fin del mundo, sino que guarda las claves de nuestro pasado geológico y nuestro futuro climático.
+               El "Muro de Hielo" como barrera física que oculta un mundo secreto es <strong>ficción conspirativa</strong>. Sin embargo, como metáfora de lo desconocido, la Antártida guarda secretos reales bajo su hielo: historia geológica, ecosistemas subglaciales y las claves de nuestro futuro climático.
              </p>
           </section>
         </div>
 
-        <div className="mt-12 text-center text-zinc-600 text-[10px] font-mono uppercase tracking-[0.5em] border-t border-zinc-900 pt-12">
-          Fin del Documento | Despertando Ando © 2024
+        <div className="mt-12 text-center text-zinc-600 text-[10px] font-mono uppercase tracking-[0.5em] border-t border-zinc-900 pt-12 pb-12">
+          Fin de la Transmisión | Despertando Ando © 2024
         </div>
       </div>
     </div>

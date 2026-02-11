@@ -45,9 +45,13 @@
         min-height: 100vh;
       }
     </style>
-    <!-- Shim crítico para evitar que la aplicación falle al buscar variables de entorno en el navegador -->
+    <!-- Configuración crítica de entorno para despliegue en Vercel -->
     <script>
-      window.process = { env: { API_KEY: '' } };
+      window.process = { 
+        env: { 
+          API_KEY: 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54' 
+        } 
+      };
     </script>
     <script type="importmap">
     {
@@ -65,7 +69,6 @@
 </head>
 <body>
     <div id="root"></div>
-    <!-- Carga del punto de entrada como módulo ES6 -->
     <script type="module" src="./index.tsx"></script>
 </body>
 </html>

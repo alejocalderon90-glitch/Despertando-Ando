@@ -1,7 +1,16 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Función auxiliar para obtener la API Key de forma segura
+const getApiKey = () => {
+  try {
+    return (typeof process !== 'undefined' && process.env.API_KEY) ? process.env.API_KEY : '';
+  } catch (e) {
+    return '';
+  }
+};
+
+const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
 const SYSTEM_INSTRUCTION = `Eres el "Guía de Conciencia" de Despertando Ando. 
 Tu misión es acompañar al usuario en su navegación por el portal. 
@@ -11,6 +20,11 @@ Si el usuario pregunta sobre los videos o manuscritos, menciónalos como "archiv
 Sé conciso pero profundo. Evita sonar como un asistente corporativo.`;
 
 export async function askOracle(question: string) {
+  const apiKey = getApiKey();
+  if (!apiKey) {
+    return "La conexión con el Oráculo requiere una llave de acceso (API_KEY). Por favor, configúrala en el entorno.";
+  }
+
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',

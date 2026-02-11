@@ -45,12 +45,13 @@
         min-height: 100vh;
       }
     </style>
-    <!-- Inyección explícita de la API Key para entornos de producción -->
+    <!-- Inyección redundante para máxima seguridad en Vercel -->
     <script>
       (function() {
-        var env = { API_KEY: 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54' };
-        window.process = { env: env };
-        // Definición global para asegurar acceso en cualquier contexto de módulo
+        var key = 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54';
+        window.process = window.process || { env: {} };
+        window.process.env = window.process.env || {};
+        window.process.env.API_KEY = key;
         window.global = window;
       })();
     </script>

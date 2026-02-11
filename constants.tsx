@@ -51,9 +51,9 @@ export const REFLECTIONS: Reflection[] = [
   {
     id: 'r1',
     title: 'La IA como Espejo del Alma',
-    excerpt: '¿Es la inteligencia artificial una amenaza o el catalizador definitivo para nuestra evolución espiritual?',
+    excerpt: '¿Es la IA una amenaza o el reflejo de nuestras sombras? Descubre por qué la tecnología nos desnuda espiritualmente.',
     category: 'Tecnología',
-    date: '12 OCT 2024'
+    date: '12 FEB 2025'
   },
   {
     id: 'r2',

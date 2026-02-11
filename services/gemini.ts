@@ -1,16 +1,20 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-// Obtenemos la clave de forma resiliente
-const getApiKey = () => {
-  try {
-    return (globalThis as any).process?.env?.API_KEY || (window as any).process?.env?.API_KEY || "";
-  } catch (e) {
-    return "";
+// Configuración crítica para Vercel: Aseguramos que el objeto process.env 
+// contenga la clave explícita para evitar que el SDK falle al cargar.
+if (typeof window !== 'undefined') {
+  if (!(window as any).process) {
+    (window as any).process = { env: {} };
   }
-};
+  // Inyectamos la clave directamente si no está presente
+  if (!process.env.API_KEY) {
+    (process.env as any).API_KEY = 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54';
+  }
+}
 
-const ai = new GoogleGenAI({ apiKey: getApiKey() });
+// Inicialización del SDK utilizando la clave asegurada
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const SYSTEM_INSTRUCTION = `Eres el "Guía de Conciencia" de Despertando Ando. 
 Tu misión es acompañar al usuario en su navegación por el portal. 
@@ -20,9 +24,6 @@ Si el usuario pregunta sobre los videos o manuscritos, menciónalos como "archiv
 Sé conciso pero profundo. Evita sonar como un asistente corporativo.`;
 
 export async function askOracle(question: string) {
-  const key = getApiKey();
-  if (!key) return "Conexión interrumpida: Se requiere una llave de acceso válida.";
-
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',

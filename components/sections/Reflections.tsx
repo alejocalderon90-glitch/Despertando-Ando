@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { REFLECTIONS } from '../../constants';
-import { ArrowUpRight, X, Globe, Shield, Search, BookOpen, AlertCircle, Info } from 'lucide-react';
+import { ArrowUpRight, X, Globe, Shield, Search, BookOpen, AlertCircle, Info, Map } from 'lucide-react';
 
 interface EssayModalProps {
   isOpen: boolean;
@@ -26,14 +26,14 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
             <Globe className="text-[#d4af37] animate-pulse" size={40} />
             <div className="absolute inset-0 border border-[#d4af37]/10 rounded-full scale-150 animate-ping"></div>
           </div>
-          <span className="text-[#d4af37] text-xs uppercase tracking-[0.5em] font-bold">Archivo Clasificado: Ref_02</span>
+          <span className="text-[#d4af37] text-xs uppercase tracking-[0.5em] font-bold">Investigación Especial: Ref_02</span>
           <h1 className="text-4xl md:text-6xl font-mystery text-white leading-tight italic">
             El Muro de Hielo: <br /><span className="text-[#d4af37]">Realidad o Metáfora</span>
           </h1>
-          <p className="text-zinc-500 font-mono text-[10px] uppercase">Hash de Integridad: 88x92-ANT-SECRET-VERIFIED</p>
+          <p className="text-zinc-500 font-mono text-[10px] uppercase">Explorando los límites de nuestro mundo</p>
         </div>
 
-        <div className="space-y-16 text-zinc-300 leading-relaxed pb-24">
+        <div className="space-y-16 text-zinc-300 leading-relaxed pb-24 text-sm md:text-base">
           <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
               <AlertCircle className="text-[#d4af37]" size={20} />
@@ -44,12 +44,12 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
                 En el modelo terraplanista moderno, la Tierra es un disco plano con el Polo Norte en el centro y la Antártida formando un <strong>anillo periférico de hielo</strong> que actúa como barrera natural.
               </p>
               <ul className="list-none space-y-4 text-sm text-zinc-400">
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Este "muro" supuestamente mide cientos de metros de altura, impidiendo que los océanos se derramen al vacío y ocultando tierras desconocidas.</li>
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se argumenta que el <strong>Tratado Antártico de 1959</strong> es una conspiración global para prohibir la exploración libre bajo vigilancia militar permanente.</li>
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se mencionan anomalías magnéticas, pirámides ocultas y las expediciones del almirante Richard Byrd sacadas de contexto.</li>
+                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Este "muro" supuestamente mide cientos de metros de altura y miles de kilómetros de longitud, impidiendo que los océanos se derramen al vacío.</li>
+                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> El Tratado Antártico de 1959 se interpreta como una conspiración global para prohibir la exploración libre y ocultar tierras desconocidas.</li>
+                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se añaden elementos como anomalías magnéticas, bases extraterrestres y las expediciones del almirante Richard Byrd sacadas de contexto.</li>
               </ul>
               <p className="text-zinc-500 italic text-xs pt-4 border-t border-zinc-800">
-                Esta idea es una metáfora de los "límites del conocimiento humano", pero presentada como realidad literal por sus defensores.
+                Esta idea es una metáfora de los "límites del conocimiento", pero se presenta como realidad literal por sus defensores.
               </p>
             </div>
           </section>
@@ -57,19 +57,19 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
               <Globe className="text-[#d4af37]" size={20} />
-              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">2. La Realidad Científica</h2>
+              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">2. La realidad científica: ¿Qué es realmente la Antártida?</h2>
             </div>
             <p>
-              La Antártida es un <strong>continente real</strong> de unos 14 millones de km², cubierto en un 98% por una capa de hielo promedio de 1,9 km de espesor. 
+              La Antártida es un <strong>continente real</strong> de unos 14 millones de km², cubierto en un 98% por una capa de hielo promedio de 1,9 km de espesor.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded">
-                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Plataformas de Hielo</h4>
-                <p className="text-sm text-zinc-500 leading-relaxed">Lo que la teoría llama "muro" son las <strong>ice shelves</strong> (como la de Ross) que tienen frentes verticales de hasta 60 metros sobre el nivel del mar.</p>
+                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Ice Shelves (Plataformas)</h4>
+                <p className="text-sm text-zinc-500 leading-relaxed">Lo que llaman "muro" son las plataformas de hielo flotante (como Ross) con frentes verticales de hasta 60 metros sobre el nivel del mar.</p>
               </div>
               <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded">
-                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Imágenes Satelitales</h4>
-                <p className="text-sm text-zinc-500 leading-relaxed">NASA, ESA y otras agencias muestran claramente un continente irregular, no un anillo infinito ni una pared perfecta.</p>
+                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Masa Continental</h4>
+                <p className="text-sm text-zinc-500 leading-relaxed">No es un anillo infinito; es un continente irregular visible desde satélites como Landsat o Sentinel de forma diaria.</p>
               </div>
             </div>
           </section>
@@ -77,28 +77,20 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           <section className="space-y-6">
             <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
               <Search className="text-[#d4af37]" size={20} />
-              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">3. Evidencia que desmiente el muro</h2>
+              <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">3. Evidencia Verificable</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
-                  <p><span className="text-white font-bold">Circunnavegación:</span> Barcos rodean la Antártida entera en carreras como la Vendée Globe. La distancia coincide con un globo, no con un disco plano.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
-                  <p><span className="text-white font-bold">Vuelos y GPS:</span> Vuelos comerciales y sistemas GPS operan allí sin anomalías que sugieran una geometría plana.</p>
-                </div>
+            <div className="space-y-6 text-sm">
+              <div className="flex gap-4 p-4 glass-card rounded border-zinc-900">
+                <Map className="text-[#d4af37] flex-shrink-0" size={24} />
+                <p><span className="text-white font-bold">Circunnavegación:</span> Regatas como la Vendée Globe rodean el continente. Si fuera un muro exterior, la circunferencia sería físicamente imposible de recorrer en los tiempos registrados.</p>
               </div>
-              <div className="space-y-4">
-                <div className="flex gap-3">
-                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
-                  <p><span className="text-white font-bold">Sol de 24 Horas:</span> En verano, el sol no se pone en el Polo Sur, fenómeno imposible en un modelo de mapa plano.</p>
-                </div>
-                <div className="flex gap-3">
-                  <div className="p-1 bg-[#d4af37]/10 rounded h-fit mt-1"><BookOpen size={14} className="text-[#d4af37]" /></div>
-                  <p><span className="text-white font-bold">Presencia Humana:</span> Más de 70 bases de 30 países operan allí. Unos 70,000 turistas visitan el continente anualmente.</p>
-                </div>
+              <div className="flex gap-4 p-4 glass-card rounded border-zinc-900">
+                <Globe className="text-[#d4af37] flex-shrink-0" size={24} />
+                <p><span className="text-white font-bold">Sol de 24 horas:</span> En el verano antártico, el sol nunca se oculta en el Polo Sur, algo imposible en un modelo plano.</p>
+              </div>
+              <div className="flex gap-4 p-4 glass-card rounded border-zinc-900">
+                <Info className="text-[#d4af37] flex-shrink-0" size={24} />
+                <p><span className="text-white font-bold">Turismo y Ciencia:</span> Más de 70 bases operan allí. Unos 70,000 turistas visitan el área anualmente en cruceros abiertos a cualquier persona con recursos.</p>
               </div>
             </div>
           </section>
@@ -108,10 +100,10 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
               <Shield className="text-[#d4af37]" size={20} />
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">4. ¿Por qué parece el mayor secreto?</h2>
             </div>
-            <div className="grid gap-6">
-              <p>El misterio se alimenta de las <strong>Condiciones Extremas</strong> (-89°C récord) y el <strong>Tratado Antártico (1959)</strong>.</p>
-              <div className="p-6 border-l-2 border-[#d4af37] bg-[#d4af37]/5 italic text-zinc-400 text-sm">
-                "El tratado declara la zona como área de paz, prohíbe actividades militares y minería comercial. No prohíbe visitas civiles, solo las regula para proteger el ecosistema y evitar contaminación ecológica."
+            <div className="space-y-4">
+              <p>Las <strong>condiciones extremas</strong> (-89°C) y el <strong>Tratado Antártico (1959)</strong> crean un aura de exclusividad. El tratado promueve la paz y la investigación, prohibiendo la minería y actividades militares, pero no la visita civil regulada.</p>
+              <div className="border-l-2 border-[#d4af37] pl-6 py-2 italic text-zinc-500">
+                "Lo que sí es 'secreto' es lo que aún no hemos descubierto bajo el hielo (ecosistemas subglaciales), pero eso se investiga abiertamente por científicos de todo el mundo."
               </div>
             </div>
           </section>
@@ -120,7 +112,7 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
              <div className="inline-block px-4 py-1 bg-[#d4af37] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Conclusión</div>
              <h3 className="text-3xl font-mystery text-white italic">Realidad vs. Metáfora</h3>
              <p className="max-w-2xl mx-auto text-zinc-400">
-               El "Muro de Hielo" como barrera física que oculta un mundo secreto es <strong>ficción conspirativa</strong>. Sin embargo, como metáfora de lo desconocido, la Antártida guarda secretos reales bajo su hielo: historia geológica, ecosistemas subglaciales y las claves de nuestro futuro climático.
+               El "Muro de Hielo" como barrera que oculta un mundo secreto es ficción conspirativa. Sin embargo, las plataformas reales son maravillas naturales fundamentales para la estabilidad climática global, conteniendo el 70% del agua dulce del planeta.
              </p>
           </section>
         </div>

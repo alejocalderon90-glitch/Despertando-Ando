@@ -45,13 +45,14 @@
         min-height: 100vh;
       }
     </style>
-    <!-- Configuración crítica de entorno para despliegue en Vercel -->
+    <!-- Inyección explícita de la API Key para entornos de producción -->
     <script>
-      window.process = { 
-        env: { 
-          API_KEY: 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54' 
-        } 
-      };
+      (function() {
+        var env = { API_KEY: 'AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54' };
+        window.process = { env: env };
+        // Definición global para asegurar acceso en cualquier contexto de módulo
+        window.global = window;
+      })();
     </script>
     <script type="importmap">
     {

@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { REFLECTIONS } from '../../constants';
-import { ArrowUpRight, X, Globe, Shield, Search, BookOpen, AlertCircle, Info, Map, Cpu, Sparkles, Zap, Eye, Ghost, Lightbulb, Compass, Scale, Radio, SignalHigh, Focus, ShieldCheck } from 'lucide-react';
+import { ArrowUpRight, X, Globe, Shield, Search, BookOpen, AlertCircle, Info, Map, Cpu, Sparkles, Zap, Eye, Ghost, Lightbulb, Compass, Scale, Radio, SignalHigh, Focus, ShieldCheck, HeartPulse, Activity } from 'lucide-react';
 
 interface EssayModalProps {
   isOpen: boolean;
@@ -16,17 +16,17 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
       <div className="max-w-4xl w-full p-6 md:p-12 relative">
         <button 
           onClick={onClose}
-          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#d4af37]/20 rounded-full border border-white/10 text-[#d4af37] transition-all z-10"
+          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#1e3a8a]/20 rounded-full border border-white/10 text-[#d4af37] transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="flex flex-col items-center mb-16 text-center space-y-6">
-          <div className="w-20 h-20 border border-[#1e3a8a]/30 rounded-lg flex items-center justify-center mb-2 relative group">
-            <Radio className="text-[#1e3a8a] group-hover:scale-110 transition-transform duration-500" size={40} />
-            <div className="absolute inset-0 border border-[#1e3a8a]/10 rounded-lg scale-150 animate-pulse"></div>
+          <div className="w-20 h-20 border border-[#1e3a8a]/40 rounded-2xl flex items-center justify-center mb-2 relative group shadow-[0_0_20px_rgba(30,58,138,0.2)]">
+            <Radio className="text-[#d4af37] group-hover:scale-110 transition-transform duration-500" size={40} />
+            <div className="absolute inset-0 border border-[#d4af37]/10 rounded-2xl scale-125 animate-pulse"></div>
           </div>
-          <span className="text-[#1e3a8a] text-xs uppercase tracking-[0.5em] font-bold">Frecuencia de Conciencia</span>
+          <span className="text-[#1e3a8a] text-xs uppercase tracking-[0.6em] font-black">Conciencia Digital</span>
           <h1 className="text-4xl md:text-7xl font-mystery text-white leading-tight italic">
             Soberanía en la <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] to-[#d4af37]">Era Digital</span>
           </h1>
@@ -34,99 +34,125 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="space-y-20 text-zinc-300 leading-relaxed pb-32">
-          {/* Concepto Central */}
+          {/* El Concepto */}
           <section className="space-y-8 text-center max-w-3xl mx-auto">
-            <div className="inline-block px-4 py-1 bg-[#1e3a8a]/20 border border-[#1e3a8a]/40 text-[#d4af37] text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">La Capacidad de Autonomía</div>
-            <p className="text-xl md:text-2xl font-light leading-relaxed text-white/90">
-              Mantener soberanía no es solo un acto político o tecnológico; es la capacidad de conservar tu <span className="text-[#d4af37]">autonomía personal</span> —mental, emocional y energética— en un mundo diseñado para fragmentarte.
+            <p className="text-xl md:text-2xl font-light leading-relaxed text-white/90 italic">
+              "La capacidad de mantener autonomía personal —mental, emocional y energética— en un mundo hiperconectado."
             </p>
-            <p className="text-zinc-500 italic">
-              "La pregunta esencial es: ¿quién gobierna tu atención y tu estado interno cuando estás rodeado de estímulos constantes?"
-            </p>
-          </section>
-
-          {/* El Estado Interno: Frecuencia Vibratoria */}
-          <section className="space-y-10">
-            <div className="flex items-center gap-4 border-b border-white/5 pb-4">
-               <SignalHigh className="text-[#d4af37]" size={24} />
-               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">Tu Frecuencia Vibratoria</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div className="p-6 glass-card rounded-xl border-zinc-800">
-                <p className="text-[#d4af37] text-xs uppercase tracking-widest mb-2 font-bold">Claridad vs Confusión</p>
-                <p className="text-sm text-zinc-400">La nitidez de tus pensamientos frente al ruido informativo.</p>
-              </div>
-              <div className="p-6 glass-card rounded-xl border-zinc-800">
-                <p className="text-[#d4af37] text-xs uppercase tracking-widest mb-2 font-bold">Calma vs Ansiedad</p>
-                <p className="text-sm text-zinc-400">Tu nivel de centro emocional ante la urgencia artificial.</p>
-              </div>
-              <div className="p-6 glass-card rounded-xl border-zinc-800">
-                <p className="text-[#d4af37] text-xs uppercase tracking-widest mb-2 font-bold">Coherencia</p>
-                <p className="text-sm text-zinc-400">La alineación real entre lo que piensas, sientes y haces.</p>
-              </div>
+            <div className="p-8 glass-card rounded-2xl border-zinc-800 bg-zinc-900/20">
+              <p className="text-zinc-400 text-sm md:text-base">
+                No se refiere solo a política o tecnología, sino a <span className="text-white font-bold">quién gobierna tu atención</span>, tus decisiones y tu estado interno cuando estás rodeado de pantallas, algoritmos y estímulos constantes.
+              </p>
             </div>
           </section>
 
-          {/* El Ecosistema del Ruido */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-               <div className="flex items-center gap-3">
-                 <AlertCircle className="text-red-500" size={20} />
-                 <h3 className="text-xl font-mystery text-white">Un Ecosistema no Neutral</h3>
-               </div>
-               <p className="text-zinc-400 text-sm">
-                 Las redes y plataformas están diseñadas con un propósito específico: captar y retener tu atención a cualquier costo.
-               </p>
-               <ul className="space-y-4">
-                 <li className="flex gap-3 text-xs text-zinc-500"><Zap size={14} className="text-red-900 mt-1 flex-shrink-0" /> Generación de dopamina rápida y adictiva.</li>
-                 <li className="flex gap-3 text-xs text-zinc-500"><Zap size={14} className="text-red-900 mt-1 flex-shrink-0" /> Fragmentación constante del foco profundo.</li>
-                 <li className="flex gap-3 text-xs text-zinc-500"><Zap size={14} className="text-red-900 mt-1 flex-shrink-0" /> Provocación de reacciones primarias (ira, miedo, comparación).</li>
-               </ul>
-            </div>
-            <div className="p-10 glass-card rounded-3xl border-red-900/10 bg-red-950/5 relative overflow-hidden group">
-               <Ghost className="absolute -bottom-4 -right-4 text-red-500/5 group-hover:scale-150 transition-transform duration-1000" size={160} />
-               <p className="text-white font-mystery text-xl italic relative z-10 leading-relaxed">
-                 "El ruido no es solo sonido: es información excesiva, urgencia artificial y estímulo permanente que busca arrastrarte emocionalmente."
-               </p>
-            </div>
-          </div>
-
-          {/* El Camino del Sujeto Consciente */}
+          {/* Frecuencia Vibratoria */}
           <section className="space-y-12">
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl font-mystery text-white">De Usuario Pasivo a Sujeto Consciente</h2>
-              <div className="h-px w-24 bg-[#d4af37] mx-auto"></div>
+            <div className="flex flex-col items-center gap-4">
+               <Activity className="text-[#d4af37] animate-pulse" size={32} />
+               <h2 className="text-3xl font-mystery text-white italic">Cómo mantener tu frecuencia vibratoria</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <p className="text-zinc-400 text-sm italic border-l-2 border-[#1e3a8a] pl-6 py-2">
+                  Aquí “frecuencia vibratoria” se usa de forma simbólica/holística. Significa tu estado interno predominante.
+                </p>
+                <div className="space-y-6 pt-4">
+                  {[
+                    { label: "Nivel de calma o ansiedad", icon: <HeartPulse size={16} /> },
+                    { label: "Claridad mental vs. confusión", icon: <Eye size={16} /> },
+                    { label: "Coherencia entre pensamiento, sentimiento y acción", icon: <Scale size={16} /> }
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-4 text-white/80">
+                      <div className="text-[#d4af37]">{item.icon}</div>
+                      <span className="text-sm tracking-wide">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="p-8 bg-[#1e3a8a]/10 border border-[#1e3a8a]/20 rounded-2xl flex items-center justify-center text-center">
+                 <p className="text-lg font-mystery text-[#d4af37] leading-relaxed">
+                   Mantenerla implica no dejar que el entorno te arrastre emocionalmente. Es el blindaje de tu núcleo.
+                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Ecosistema No Neutral */}
+          <section className="space-y-10 relative">
+            <div className="absolute -left-10 top-0 text-[#d4af37]/5 font-mystery text-9xl pointer-events-none select-none">RUIDO</div>
+            <div className="flex items-center gap-4">
+               <AlertCircle className="text-red-500" size={24} />
+               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">Un ecosistema diseñado para la distracción</h2>
+            </div>
+            
+            <p className="text-zinc-400">Este es el punto clave: las redes, apps y plataformas no son neutrales. Están diseñadas para:</p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { icon: <Eye size={20}/>, title: "Consumo Crítico", desc: "Elegir conscientemente qué y cuánto consumes." },
-                { icon: <ShieldCheck size={20}/>, title: "Límites Reales", desc: "Poner fronteras firmes al uso de la tecnología." },
-                { icon: <Focus size={20}/>, title: "No-Reacción", desc: "Romper el automatismo ante cada notificación." },
-                { icon: <Compass size={20}/>, title: "Presencia", desc: "Cultivar el silencio y el foco en el ahora." }
+                { title: "Atención", desc: "Captar y retener tu foco" },
+                { title: "Dopamina", desc: "Generar gratificación rápida" },
+                { title: "Foco", desc: "Fragmentar la concentración" },
+                { title: "Emoción", desc: "Provocar ira o comparación" }
               ].map((item, i) => (
-                <div key={i} className="p-6 bg-white/5 rounded-xl border border-white/5 hover:border-[#d4af37]/20 transition-all">
-                  <div className="text-[#d4af37] mb-3">{item.icon}</div>
-                  <h4 className="text-white text-sm font-bold mb-2">{item.title}</h4>
-                  <p className="text-zinc-500 text-xs leading-relaxed">{item.desc}</p>
+                <div key={i} className="p-4 border border-zinc-800 rounded-lg hover:border-red-900/30 transition-colors">
+                  <h4 className="text-white text-xs font-bold uppercase mb-1 tracking-widest">{item.title}</h4>
+                  <p className="text-[10px] text-zinc-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 p-6 bg-red-950/10 border border-red-900/20 rounded-xl">
+              <p className="text-sm italic leading-relaxed">
+                El “ruido” no es solo sonido: es información excesiva, urgencia artificial y estímulo permanente. Es la estática de la Matrix.
+              </p>
+            </div>
+          </section>
+
+          {/* El Significado Real */}
+          <section className="bg-gradient-to-br from-[#1e3a8a]/20 to-black p-12 rounded-3xl border border-white/5 text-center space-y-6">
+            <h2 className="text-4xl font-mystery text-white">Conserva tu centro</h2>
+            <p className="text-xl text-[#d4af37] font-light italic">
+              "Cómo conservar tu claridad y tu poder personal en un entorno digital que compite constantemente por tu atención y energía."
+            </p>
+          </section>
+
+          {/* La Práctica Consciente */}
+          <section className="space-y-10">
+            <div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
+               <Focus className="text-[#d4af37]" size={24} />
+               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">En la práctica: La Guía del Soberano</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                "Elegir conscientemente qué consumes y cuánto",
+                "Poner límites claros al uso de tecnología",
+                "No reaccionar automáticamente a cada notificación",
+                "Cultivar silencio, foco y presencia absoluta",
+                "Usar lo digital como herramienta, no como dueño de tu mente"
+              ].map((step, i) => (
+                <div key={i} className="flex gap-4 p-4 glass-card rounded-lg hover:bg-zinc-900/50 transition-all">
+                  <span className="text-[#1e3a8a] font-mono text-xs">0{i+1}</span>
+                  <p className="text-sm text-zinc-300">{step}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Conclusión */}
+          {/* Cierre Trascendental */}
           <section className="text-center pt-16 space-y-8">
-            <p className="text-2xl font-mystery text-white italic max-w-2xl mx-auto">
-              "Usa lo digital como una herramienta para expandirte, no permitas que se convierta en el dueño de tu mente."
-            </p>
-            <div className="flex flex-col items-center gap-2">
-               <span className="text-[#d4af37] font-mono text-xs uppercase tracking-[0.5em] font-black">Soberanía Recuperada</span>
-               <div className="w-1.5 h-1.5 bg-[#d4af37] rounded-full animate-ping"></div>
-            </div>
+            <div className="w-16 h-px bg-[#d4af37] mx-auto opacity-50"></div>
+            <h3 className="text-4xl md:text-5xl font-mystery text-white leading-tight italic">
+              Es una invitación a pasar de <br/> <span className="text-[#d4af37] not-italic font-bold">usuario pasivo</span> a <span className="text-white underline decoration-[#d4af37]/40 underline-offset-8">sujeto consciente</span>.
+            </h3>
+            <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em]">El poder reside en tu atención</p>
           </section>
         </div>
 
         <div className="mt-24 text-center text-zinc-800 text-[10px] font-mono uppercase tracking-[0.8em] border-t border-zinc-900 pt-16 pb-20">
-          Transmisión de Conciencia | Oráculo V.03 | Despertando Ando © 2025
+          Fragmento de Conciencia | Ref_03 | Despertando Ando © 2025
         </div>
       </div>
     </div>

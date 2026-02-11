@@ -9,6 +9,7 @@ import { Reflections } from './components/sections/Reflections';
 import { Oracle } from './components/sections/Oracle';
 import { Community } from './components/sections/Community';
 import { Footer } from './components/layout/Footer';
+import { ChatAgent } from './components/chat/ChatAgent';
 import { Eye, Shield, Cpu, Globe } from 'lucide-react';
 
 const AboutFeature: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
@@ -84,6 +85,7 @@ function App() {
         <Community />
       </main>
 
+      <ChatAgent />
       <Footer />
     </div>
   );

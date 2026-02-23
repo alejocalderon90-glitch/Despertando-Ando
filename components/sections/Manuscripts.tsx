@@ -15,11 +15,11 @@ export const Manuscripts: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <div className="flex justify-center mb-4">
-            <div className="p-3 bg-[#d4af37]/5 border border-[#d4af37]/20 rounded-full text-[#d4af37]">
+            <div className="p-3 bg-[#00f2ff]/5 border border-[#00f2ff]/20 rounded-full text-[#00f2ff]">
               <FileText size={32} />
             </div>
           </div>
-          <h2 className="text-[#d4af37] text-sm uppercase tracking-[0.4em]">Gran Biblioteca</h2>
+          <h2 className="text-[#00f2ff] text-sm uppercase tracking-[0.4em]">Gran Biblioteca</h2>
           <h3 className="text-4xl md:text-6xl font-mystery">Archivo de Manuscritos</h3>
           <p className="text-zinc-500 max-w-2xl mx-auto font-light">
             Textos fundamentales recuperados para el despertar de la conciencia. 
@@ -29,8 +29,8 @@ export const Manuscripts: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
           {BOOKS.map((book) => (
-            <div key={book.id} className="group relative flex flex-col bg-zinc-900/30 border border-zinc-800 p-8 rounded-sm hover:border-[#d4af37]/30 transition-all duration-500">
-              <div className="absolute -top-3 -right-3 px-3 py-1 bg-zinc-950 border border-[#d4af37]/40 text-[#d4af37] text-[10px] uppercase font-bold tracking-widest z-10">
+            <div key={book.id} className="group relative flex flex-col bg-zinc-900/30 border border-zinc-800 p-8 rounded-sm hover:border-[#00f2ff]/30 transition-all duration-500">
+              <div className="absolute -top-3 -right-3 px-3 py-1 bg-zinc-950 border border-[#00f2ff]/40 text-[#00f2ff] text-[10px] uppercase font-bold tracking-widest z-10">
                 {book.tag}
               </div>
               
@@ -45,7 +45,7 @@ export const Manuscripts: React.FC = () => {
                 </div>
 
                 <div className="flex-1 space-y-4">
-                  <h4 className="text-3xl font-mystery text-white group-hover:text-[#d4af37] transition-colors">{book.title}</h4>
+                  <h4 className="text-3xl font-mystery text-white group-hover:text-[#00f2ff] transition-colors">{book.title}</h4>
                   <div className="flex items-center gap-2 text-zinc-400 text-xs italic">
                     <User size={14} /> {book.subtitle}
                   </div>

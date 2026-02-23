@@ -56,21 +56,21 @@ export const ChatAgent: React.FC = () => {
       {!isOpen && (
         <button
           onClick={handleToggle}
-          className="relative group p-4 bg-black border border-[#d4af37]/40 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all duration-500 animate-pulse"
+          className="relative group p-4 bg-black border border-[#00f2ff]/40 rounded-full shadow-[0_0_20px_rgba(0,242,255,0.2)] hover:shadow-[0_0_30px_rgba(0,242,255,0.4)] transition-all duration-500 animate-pulse"
         >
-          <div className="absolute inset-0 bg-[#d4af37]/10 rounded-full animate-ping"></div>
-          <Sparkles className="text-[#d4af37] relative z-10" size={28} />
+          <div className="absolute inset-0 bg-[#00f2ff]/10 rounded-full animate-ping"></div>
+          <Sparkles className="text-[#00f2ff] relative z-10" size={28} />
         </button>
       )}
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[350px] md:w-[400px] h-[500px] glass-card rounded-2xl border-[#d4af37]/30 shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300">
+        <div className="w-[350px] md:w-[400px] h-[500px] glass-card rounded-2xl border-[#00f2ff]/30 shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300">
           {/* Header */}
-          <div className="p-4 bg-black/80 border-b border-[#d4af37]/20 flex items-center justify-between">
+          <div className="p-4 bg-black/80 border-b border-[#00f2ff]/20 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#d4af37]/20 flex items-center justify-center border border-[#d4af37]/40">
-                <Bot size={18} className="text-[#d4af37]" />
+              <div className="w-8 h-8 rounded-full bg-[#00f2ff]/20 flex items-center justify-center border border-[#00f2ff]/40">
+                <Bot size={18} className="text-[#00f2ff]" />
               </div>
               <div>
                 <h4 className="text-sm font-mystery text-white tracking-widest uppercase">Guía de Conciencia</h4>
@@ -100,7 +100,7 @@ export const ChatAgent: React.FC = () => {
                 <div 
                   className={`max-w-[85%] p-3 rounded-lg text-sm ${
                     msg.role === 'user' 
-                      ? 'bg-[#1e3a8a]/40 border border-[#1e3a8a]/60 text-white rounded-br-none' 
+                      ? 'bg-[#0066cc]/40 border border-[#0066cc]/60 text-white rounded-br-none' 
                       : 'bg-zinc-900/80 border border-zinc-800 text-zinc-300 rounded-bl-none'
                   }`}
                 >
@@ -111,9 +111,9 @@ export const ChatAgent: React.FC = () => {
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-zinc-900/80 border border-zinc-800 p-3 rounded-lg flex gap-1">
-                  <span className="w-1.5 h-1.5 bg-[#d4af37] rounded-full animate-bounce"></span>
-                  <span className="w-1.5 h-1.5 bg-[#d4af37] rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                  <span className="w-1.5 h-1.5 bg-[#d4af37] rounded-full animate-bounce [animation-delay:0.4s]"></span>
+                  <span className="w-1.5 h-1.5 bg-[#00f2ff] rounded-full animate-bounce"></span>
+                  <span className="w-1.5 h-1.5 bg-[#00f2ff] rounded-full animate-bounce [animation-delay:0.2s]"></span>
+                  <span className="w-1.5 h-1.5 bg-[#00f2ff] rounded-full animate-bounce [animation-delay:0.4s]"></span>
                 </div>
               </div>
             )}
@@ -126,12 +126,12 @@ export const ChatAgent: React.FC = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Escribe tu inquietud..."
-              className="flex-1 bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-2 text-xs focus:outline-none focus:border-[#d4af37] transition-colors"
+              className="flex-1 bg-zinc-900/50 border border-zinc-800 rounded-lg px-4 py-2 text-xs focus:outline-none focus:border-[#00f2ff] transition-colors"
             />
             <button 
               type="submit"
               disabled={isLoading}
-              className="p-2 bg-[#d4af37] text-black rounded-lg hover:bg-white transition-colors disabled:opacity-50"
+              className="p-2 bg-[#00f2ff] text-black rounded-lg hover:bg-white transition-colors disabled:opacity-50"
             >
               <Send size={18} />
             </button>
@@ -144,7 +144,7 @@ export const ChatAgent: React.FC = () => {
           width: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(212, 175, 55, 0.2);
+          background: rgba(0, 242, 255, 0.2);
           border-radius: 10px;
         }
       `}</style>

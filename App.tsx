@@ -13,8 +13,8 @@ import { ChatAgent } from './components/chat/ChatAgent';
 import { Eye, Shield, Cpu, Globe } from 'lucide-react';
 
 const AboutFeature: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
-  <div className="p-8 glass-card rounded-lg border-zinc-800 hover:border-[#d4af37]/30 transition-all duration-500">
-    <div className="text-[#d4af37] mb-4">{icon}</div>
+  <div className="p-8 glass-card rounded-lg border-zinc-800 hover:border-[#00f2ff]/30 transition-all duration-500">
+    <div className="text-[#00f2ff] mb-4">{icon}</div>
     <h4 className="text-xl font-mystery mb-3">{title}</h4>
     <p className="text-zinc-500 text-sm leading-relaxed">{text}</p>
   </div>
@@ -22,7 +22,7 @@ const AboutFeature: React.FC<{ icon: React.ReactNode, title: string, text: strin
 
 function App() {
   return (
-    <div className="min-h-screen selection:bg-[#d4af37] selection:text-black">
+    <div className="min-h-screen selection:bg-[#00f2ff] selection:text-black">
       <Navbar />
       
       <main>
@@ -33,7 +33,7 @@ function App() {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-12 items-center mb-20">
               <div className="lg:col-span-2 space-y-6">
-                <h2 className="text-[#d4af37] text-sm uppercase tracking-widest">El Manifiesto</h2>
+                <h2 className="text-[#00f2ff] text-sm uppercase tracking-widest">El Manifiesto</h2>
                 <h3 className="text-4xl md:text-6xl font-mystery">Un portal diseñado para <br/>hackear tu percepción.</h3>
                 <p className="text-zinc-400 text-xl font-light leading-relaxed">
                   No somos solo una web de misterio. Somos un laboratorio de conciencia. 
@@ -43,11 +43,11 @@ function App() {
                 </p>
               </div>
               <div className="hidden lg:block">
-                 <div className="w-full aspect-square border border-[#d4af37]/20 rounded-full flex items-center justify-center relative">
-                    <div className="w-3/4 h-3/4 border border-[#1e3a8a]/40 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
-                      <div className="w-4 h-4 bg-[#d4af37] rounded-full"></div>
+                 <div className="w-full aspect-square border border-[#00f2ff]/20 rounded-full flex items-center justify-center relative">
+                    <div className="w-3/4 h-3/4 border border-[#00f2ff]/40 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
+                      <div className="w-4 h-4 bg-[#00f2ff] rounded-full"></div>
                     </div>
-                    <Eye className="absolute text-[#d4af37]/50" size={48} />
+                    <Eye className="absolute text-[#00f2ff]/50" size={48} />
                  </div>
               </div>
             </div>

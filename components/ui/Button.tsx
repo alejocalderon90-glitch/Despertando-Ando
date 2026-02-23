@@ -17,9 +17,9 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = "inline-flex items-center justify-center font-bold rounded-sm transition-all duration-300 active:scale-95";
   
   const variants = {
-    primary: "bg-[#d4af37] text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]",
-    secondary: "bg-[#1e3a8a] text-white hover:bg-[#2563eb]",
-    outline: "border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-black"
+    primary: "bg-[#00f2ff] text-black hover:bg-white hover:shadow-[0_0_20px_rgba(0,242,255,0.4)]",
+    secondary: "bg-[#0066cc] text-white hover:bg-[#0088ff]",
+    outline: "border border-[#00f2ff] text-[#00f2ff] hover:bg-[#00f2ff] hover:text-black"
   };
 
   const sizes = {

@@ -9,7 +9,7 @@ export const Saga: React.FC = () => {
     <section id="saga" className="py-24 px-4 bg-zinc-950">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#d4af37] to-[#1e3a8a] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#00f2ff] to-[#0066cc] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
           <img 
             src="https://picsum.photos/seed/antarctica/800/1000" 
             alt="Alejandro y los Misterios de la Antártida" 
@@ -23,7 +23,7 @@ export const Saga: React.FC = () => {
 
         <div className="space-y-10">
           <div>
-            <h2 className="text-[#d4af37] text-sm uppercase tracking-widest mb-4">La Saga Épica</h2>
+            <h2 className="text-[#00f2ff] text-sm uppercase tracking-widest mb-4">La Saga Épica</h2>
             <h3 className="text-4xl md:text-5xl font-mystery mb-6">Alejandro y los Misterios de la Antártida</h3>
             <p className="text-zinc-400 text-lg leading-relaxed">
               Más allá del muro de hielo se extienden tierras que los mapas oficiales han borrado. 
@@ -34,8 +34,8 @@ export const Saga: React.FC = () => {
 
           <div className="grid sm:grid-cols-3 gap-6">
             {WORLDS.map((world) => (
-              <div key={world.id} className="p-4 border border-zinc-800 rounded-lg hover:border-[#d4af37]/50 transition-colors bg-zinc-900/50">
-                <span className="text-[#d4af37] font-bold block mb-1">Mundo {world.id}</span>
+              <div key={world.id} className="p-4 border border-zinc-800 rounded-lg hover:border-[#00f2ff]/50 transition-colors bg-zinc-900/50">
+                <span className="text-[#00f2ff] font-bold block mb-1">Mundo {world.id}</span>
                 <p className="text-xs text-zinc-500">{world.description}</p>
               </div>
             ))}
@@ -43,7 +43,7 @@ export const Saga: React.FC = () => {
 
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <div className="p-2 bg-[#d4af37]/10 rounded-full text-[#d4af37]">
+              <div className="p-2 bg-[#00f2ff]/10 rounded-full text-[#00f2ff]">
                 <Shield size={20} />
               </div>
               <p className="text-zinc-300 italic">"Los portales solo se abren para quienes dejan de temer al sistema."</p>

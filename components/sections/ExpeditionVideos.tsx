@@ -14,7 +14,7 @@ export const ExpeditionVideos: React.FC = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
           <div className="space-y-4 text-center md:text-left">
-            <h2 className="text-[#d4af37] text-sm uppercase tracking-[0.4em] flex items-center justify-center md:justify-start gap-2">
+            <h2 className="text-[#00f2ff] text-sm uppercase tracking-[0.4em] flex items-center justify-center md:justify-start gap-2">
               <Activity size={16} className="animate-pulse" /> Material Clasificado
             </h2>
             <h3 className="text-4xl md:text-6xl font-mystery italic">Videos de la Expedición</h3>
@@ -33,8 +33,8 @@ export const ExpeditionVideos: React.FC = () => {
              >
                 <ImageIcon size={18} /> Ver Galería de Evidencias
              </Button>
-             <div className="hidden md:flex p-4 glass-card rounded-full border-[#d4af37]/20">
-                <Disc className="text-[#d4af37] animate-spin-slow" size={32} />
+             <div className="hidden md:flex p-4 glass-card rounded-full border-[#00f2ff]/20">
+                <Disc className="text-[#00f2ff] animate-spin-slow" size={32} />
              </div>
           </div>
         </div>
@@ -42,8 +42,8 @@ export const ExpeditionVideos: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-12">
           {EXPEDITION_VIDEOS.map((vid) => (
             <div key={vid.id} className="lg:col-span-8 group relative">
-              <div className="absolute -inset-2 bg-gradient-to-r from-[#d4af37]/20 to-transparent blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
-              <div className="relative glass-card rounded-xl overflow-hidden border border-[#d4af37]/10 p-2 shadow-2xl">
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#00f2ff]/20 to-transparent blur opacity-0 group-hover:opacity-100 transition duration-700"></div>
+              <div className="relative glass-card rounded-xl overflow-hidden border border-[#00f2ff]/10 p-2 shadow-2xl">
                 <div className="bg-black rounded-lg overflow-hidden aspect-video relative">
                   <video 
                     className="w-full h-full object-contain"
@@ -54,13 +54,13 @@ export const ExpeditionVideos: React.FC = () => {
                     Tu navegador no soporta el formato de video.
                   </video>
                   {/* Overlay aesthetic elements */}
-                  <div className="absolute top-4 left-4 pointer-events-none text-[10px] text-[#d4af37]/40 font-mono flex flex-col gap-1 uppercase">
+                  <div className="absolute top-4 left-4 pointer-events-none text-[10px] text-[#00f2ff]/40 font-mono flex flex-col gap-1 uppercase">
                     <span>Rec_State: Active</span>
                     <span>Enc: Supraconciencia_V2</span>
                     <span>Lat: 90.0000° S</span>
                   </div>
                   <div className="absolute bottom-4 right-4 pointer-events-none">
-                    <Video className="text-[#d4af37]/20" size={24} />
+                    <Video className="text-[#00f2ff]/20" size={24} />
                   </div>
                 </div>
               </div>
@@ -68,8 +68,8 @@ export const ExpeditionVideos: React.FC = () => {
           ))}
           
           <div className="lg:col-span-4 space-y-8">
-            <div className="p-8 glass-card rounded-xl border-[#1e3a8a]/20 h-full flex flex-col justify-center">
-              <h4 className="text-[#d4af37] font-mystery text-2xl mb-4">Bitácora de Hallazgo</h4>
+            <div className="p-8 glass-card rounded-xl border-[#0066cc]/20 h-full flex flex-col justify-center">
+              <h4 className="text-[#00f2ff] font-mystery text-2xl mb-4">Bitácora de Hallazgo</h4>
               <p className="text-zinc-400 text-sm leading-relaxed italic mb-6">
                 "Lo que ves en este video no es una simulación. Alejandro logró capturar el momento exacto en que la frecuencia del muro de hielo se estabiliza. 
                 Presta atención a las sombras; no pertenecen a nuestro espectro visible."
@@ -81,7 +81,7 @@ export const ExpeditionVideos: React.FC = () => {
                 </div>
                 <div className="flex justify-between text-[10px] uppercase tracking-widest text-zinc-500">
                   <span>Autorización:</span>
-                  <span className="text-[#d4af37]">Nivel 7</span>
+                  <span className="text-[#00f2ff]">Nivel 7</span>
                 </div>
               </div>
             </div>
@@ -96,7 +96,7 @@ export const ExpeditionVideos: React.FC = () => {
             <div className="flex items-center gap-4">
                <button 
                 onClick={() => setShowGallery(false)}
-                className="p-2 hover:bg-zinc-800 rounded-full text-[#d4af37] transition-colors"
+                className="p-2 hover:bg-zinc-800 rounded-full text-[#00f2ff] transition-colors"
                >
                  <ArrowLeft size={24} />
                </button>
@@ -116,9 +116,9 @@ export const ExpeditionVideos: React.FC = () => {
           <div className="p-10 max-w-7xl mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {EXPEDITION_IMAGES.map((img, idx) => (
-                <div key={idx} className="group relative bg-zinc-900 border border-zinc-800 p-4 rounded-sm shadow-2xl hover:border-[#d4af37]/40 transition-all duration-500">
+                <div key={idx} className="group relative bg-zinc-900 border border-zinc-800 p-4 rounded-sm shadow-2xl hover:border-[#00f2ff]/40 transition-all duration-500">
                   <div className="absolute top-6 left-6 z-10">
-                     <Camera size={16} className="text-[#d4af37]/30" />
+                     <Camera size={16} className="text-[#00f2ff]/30" />
                   </div>
                   <div className="aspect-square overflow-hidden bg-black mb-4 relative">
                     <img 
@@ -131,7 +131,7 @@ export const ExpeditionVideos: React.FC = () => {
                   <div className="flex justify-between items-end border-t border-zinc-800 pt-4">
                     <div className="space-y-1">
                       <span className="block text-[10px] text-zinc-600 font-mono uppercase">Evidence_File: 00{idx + 1}</span>
-                      <span className="block text-[8px] text-[#d4af37]/50 font-mono">HASH: 77a28b{idx}ef...</span>
+                      <span className="block text-[8px] text-[#00f2ff]/50 font-mono">HASH: 77a28b{idx}ef...</span>
                     </div>
                     <Shield size={14} className="text-zinc-700" />
                   </div>

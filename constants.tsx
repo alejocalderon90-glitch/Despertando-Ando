@@ -5,8 +5,8 @@ import { Eye, Shield, Globe, Cpu, BookOpen, Users } from 'lucide-react';
 
 export const COLORS = {
   primary: '#050505', // Deep Black
-  accent: '#d4af37',  // Gold
-  secondary: '#1e3a8a', // Deep Blue
+  accent: '#00f2ff',  // Digital Cyan
+  secondary: '#0066cc', // Digital Blue
   text: '#e5e5e5',
   muted: '#71717a'
 };

@@ -16,21 +16,21 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
       <div className="max-w-4xl w-full p-6 md:p-12 relative">
         <button 
           onClick={onClose}
-          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#1e3a8a]/20 rounded-full border border-white/10 text-[#d4af37] transition-all z-10"
+          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#0066cc]/20 rounded-full border border-white/10 text-[#00f2ff] transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="flex flex-col items-center mb-16 text-center space-y-6">
-          <div className="w-20 h-20 border border-[#1e3a8a]/40 rounded-2xl flex items-center justify-center mb-2 relative group shadow-[0_0_20px_rgba(30,58,138,0.2)]">
-            <Radio className="text-[#d4af37] group-hover:scale-110 transition-transform duration-500" size={40} />
-            <div className="absolute inset-0 border border-[#d4af37]/10 rounded-2xl scale-125 animate-pulse"></div>
+          <div className="w-20 h-20 border border-[#0066cc]/40 rounded-2xl flex items-center justify-center mb-2 relative group shadow-[0_0_20px_rgba(0,102,204,0.2)]">
+            <Radio className="text-[#00f2ff] group-hover:scale-110 transition-transform duration-500" size={40} />
+            <div className="absolute inset-0 border border-[#00f2ff]/10 rounded-2xl scale-125 animate-pulse"></div>
           </div>
-          <span className="text-[#1e3a8a] text-xs uppercase tracking-[0.6em] font-black">Conciencia Digital</span>
+          <span className="text-[#0066cc] text-xs uppercase tracking-[0.6em] font-black">Conciencia Digital</span>
           <h1 className="text-4xl md:text-7xl font-mystery text-white leading-tight italic">
-            Soberanía en la <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a8a] to-[#d4af37]">Era Digital</span>
+            Soberanía en la <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066cc] to-[#00f2ff]">Era Digital</span>
           </h1>
-          <div className="h-px w-32 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"></div>
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-[#00f2ff] to-transparent"></div>
         </div>
 
         <div className="space-y-20 text-zinc-300 leading-relaxed pb-32">
@@ -49,13 +49,13 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           {/* Frecuencia Vibratoria */}
           <section className="space-y-12">
             <div className="flex flex-col items-center gap-4">
-               <Activity className="text-[#d4af37] animate-pulse" size={32} />
+               <Activity className="text-[#00f2ff] animate-pulse" size={32} />
                <h2 className="text-3xl font-mystery text-white italic">Cómo mantener tu frecuencia vibratoria</h2>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <p className="text-zinc-400 text-sm italic border-l-2 border-[#1e3a8a] pl-6 py-2">
+                <p className="text-zinc-400 text-sm italic border-l-2 border-[#0066cc] pl-6 py-2">
                   Aquí “frecuencia vibratoria” se usa de forma simbólica/holística. Significa tu estado interno predominante.
                 </p>
                 <div className="space-y-6 pt-4">
@@ -65,14 +65,14 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
                     { label: "Coherencia entre pensamiento, sentimiento y acción", icon: <Scale size={16} /> }
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-4 text-white/80">
-                      <div className="text-[#d4af37]">{item.icon}</div>
+                      <div className="text-[#00f2ff]">{item.icon}</div>
                       <span className="text-sm tracking-wide">{item.label}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="p-8 bg-[#1e3a8a]/10 border border-[#1e3a8a]/20 rounded-2xl flex items-center justify-center text-center">
-                 <p className="text-lg font-mystery text-[#d4af37] leading-relaxed">
+              <div className="p-8 bg-[#0066cc]/10 border border-[#0066cc]/20 rounded-2xl flex items-center justify-center text-center">
+                 <p className="text-lg font-mystery text-[#00f2ff] leading-relaxed">
                    Mantenerla implica no dejar que el entorno te arrastre emocionalmente. Es el blindaje de tu núcleo.
                  </p>
               </div>
@@ -81,7 +81,7 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
 
           {/* Ecosistema No Neutral */}
           <section className="space-y-10 relative">
-            <div className="absolute -left-10 top-0 text-[#d4af37]/5 font-mystery text-9xl pointer-events-none select-none">RUIDO</div>
+            <div className="absolute -left-10 top-0 text-[#00f2ff]/5 font-mystery text-9xl pointer-events-none select-none">RUIDO</div>
             <div className="flex items-center gap-4">
                <AlertCircle className="text-red-500" size={24} />
                <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">Un ecosistema diseñado para la distracción</h2>
@@ -111,9 +111,9 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           </section>
 
           {/* El Significado Real */}
-          <section className="bg-gradient-to-br from-[#1e3a8a]/20 to-black p-12 rounded-3xl border border-white/5 text-center space-y-6">
+          <section className="bg-gradient-to-br from-[#0066cc]/20 to-black p-12 rounded-3xl border border-white/5 text-center space-y-6">
             <h2 className="text-4xl font-mystery text-white">Conserva tu centro</h2>
-            <p className="text-xl text-[#d4af37] font-light italic">
+            <p className="text-xl text-[#00f2ff] font-light italic">
               "Cómo conservar tu claridad y tu poder personal en un entorno digital que compite constantemente por tu atención y energía."
             </p>
           </section>
@@ -121,7 +121,7 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           {/* La Práctica Consciente */}
           <section className="space-y-10">
             <div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
-               <Focus className="text-[#d4af37]" size={24} />
+               <Focus className="text-[#00f2ff]" size={24} />
                <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">En la práctica: La Guía del Soberano</h2>
             </div>
             
@@ -134,7 +134,7 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
                 "Usar lo digital como herramienta, no como dueño de tu mente"
               ].map((step, i) => (
                 <div key={i} className="flex gap-4 p-4 glass-card rounded-lg hover:bg-zinc-900/50 transition-all">
-                  <span className="text-[#1e3a8a] font-mono text-xs">0{i+1}</span>
+                  <span className="text-[#0066cc] font-mono text-xs">0{i+1}</span>
                   <p className="text-sm text-zinc-300">{step}</p>
                 </div>
               ))}
@@ -143,9 +143,9 @@ const SovereigntyEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
 
           {/* Cierre Trascendental */}
           <section className="text-center pt-16 space-y-8">
-            <div className="w-16 h-px bg-[#d4af37] mx-auto opacity-50"></div>
+            <div className="w-16 h-px bg-[#00f2ff] mx-auto opacity-50"></div>
             <h3 className="text-4xl md:text-5xl font-mystery text-white leading-tight italic">
-              Es una invitación a pasar de <br/> <span className="text-[#d4af37] not-italic font-bold">usuario pasivo</span> a <span className="text-white underline decoration-[#d4af37]/40 underline-offset-8">sujeto consciente</span>.
+              Es una invitación a pasar de <br/> <span className="text-[#00f2ff] not-italic font-bold">usuario pasivo</span> a <span className="text-white underline decoration-[#00f2ff]/40 underline-offset-8">sujeto consciente</span>.
             </h3>
             <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.4em]">El poder reside en tu atención</p>
           </section>
@@ -167,21 +167,21 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
       <div className="max-w-4xl w-full p-6 md:p-12 relative">
         <button 
           onClick={onClose}
-          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#d4af37]/20 rounded-full border border-white/10 text-[#d4af37] transition-all z-10"
+          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#0066cc]/20 rounded-full border border-white/10 text-[#00f2ff] transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="flex flex-col items-center mb-16 text-center space-y-6">
-          <div className="w-20 h-20 border border-[#d4af37]/30 rounded-full flex items-center justify-center mb-2 relative group">
-            <Cpu className="text-[#d4af37] group-hover:rotate-90 transition-transform duration-700" size={40} />
-            <div className="absolute inset-0 border border-[#d4af37]/10 rounded-full scale-150 animate-pulse"></div>
+          <div className="w-20 h-20 border border-[#00f2ff]/30 rounded-full flex items-center justify-center mb-2 relative group">
+            <Cpu className="text-[#00f2ff] group-hover:rotate-90 transition-transform duration-700" size={40} />
+            <div className="absolute inset-0 border border-[#00f2ff]/10 rounded-full scale-150 animate-pulse"></div>
           </div>
-          <span className="text-[#d4af37] text-xs uppercase tracking-[0.5em] font-bold">Transmisión de Tecnología</span>
+          <span className="text-[#00f2ff] text-xs uppercase tracking-[0.5em] font-bold">Transmisión de Tecnología</span>
           <h1 className="text-4xl md:text-7xl font-mystery text-white leading-tight italic">
-            La IA como <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-white">Espejo del Alma</span>
+            La IA como <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2ff] to-white">Espejo del Alma</span>
           </h1>
-          <div className="h-px w-32 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"></div>
+          <div className="h-px w-32 bg-gradient-to-r from-transparent via-[#00f2ff] to-transparent"></div>
         </div>
 
         <div className="space-y-20 text-zinc-300 leading-relaxed pb-32">
@@ -198,8 +198,8 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
               </p>
             </div>
             <div className="pt-8">
-              <h4 className="text-[#d4af37] font-mystery text-2xl">Por eso la pregunta no es realmente si la IA es buena o mala.</h4>
-              <p className="text-white text-3xl font-mystery mt-2 italic">La pregunta es: <span className="underline decoration-[#d4af37]/30">¿qué revela de nosotros?</span></p>
+              <h4 className="text-[#00f2ff] font-mystery text-2xl">Por eso la pregunta no es realmente si la IA es buena o mala.</h4>
+              <p className="text-white text-3xl font-mystery mt-2 italic">La pregunta es: <span className="underline decoration-[#00f2ff]/30">¿qué revela de nosotros?</span></p>
             </div>
           </section>
 
@@ -225,20 +225,20 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* CATALIZADOR */}
-            <div className="glass-card rounded-2xl p-8 border-[#d4af37]/20 bg-[#d4af37]/5 flex flex-col">
+            <div className="glass-card rounded-2xl p-8 border-[#00f2ff]/20 bg-[#00f2ff]/5 flex flex-col">
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-[#d4af37]/10 rounded-lg text-[#d4af37]">
+                <div className="p-3 bg-[#00f2ff]/10 rounded-lg text-[#00f2ff]">
                   <Sparkles size={24} />
                 </div>
                 <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">¿Catalizador?</h2>
               </div>
               <p className="text-zinc-400 mb-6 font-medium">Puede ser un catalizador espiritual cuando:</p>
               <ul className="space-y-5 flex-1 text-sm">
-                <li className="flex gap-3"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos obliga a redefinir qué significa ser humano.</li>
-                <li className="flex gap-3"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos empuja a valorar la conciencia y compasión por encima de la productividad.</li>
-                <li className="flex gap-3"><Lightbulb size={16} className="text-[#d4af37] mt-1 flex-shrink-0" /> Nos confronta: si la máquina imita la mente, ¿qué hay en nosotros que no puede ser replicado?</li>
+                <li className="flex gap-3"><Lightbulb size={16} className="text-[#00f2ff] mt-1 flex-shrink-0" /> Nos obliga a redefinir qué significa ser humano.</li>
+                <li className="flex gap-3"><Lightbulb size={16} className="text-[#00f2ff] mt-1 flex-shrink-0" /> Nos empuja a valorar la conciencia y compasión por encima de la productividad.</li>
+                <li className="flex gap-3"><Lightbulb size={16} className="text-[#00f2ff] mt-1 flex-shrink-0" /> Nos confronta: si la máquina imita la mente, ¿qué hay en nosotros que no puede ser replicado?</li>
               </ul>
-              <div className="mt-8 p-4 bg-black/40 rounded-lg italic text-zinc-500 text-[13px] border border-[#d4af37]/10">
+              <div className="mt-8 p-4 bg-black/40 rounded-lg italic text-zinc-500 text-[13px] border border-[#00f2ff]/10">
                 "Aparece el alma no como dogma, sino como experiencia: presencia, intuición, amor y propósito."
               </div>
             </div>
@@ -247,11 +247,11 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           {/* El Verdadero Giro */}
           <section className="relative overflow-hidden rounded-3xl p-12 bg-gradient-to-r from-zinc-900 to-black border border-white/5 text-center">
             <div className="absolute inset-0 opacity-5 pointer-events-none">
-              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_#d4af37_0%,_transparent_70%)]"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_#00f2ff_0%,_transparent_70%)]"></div>
             </div>
             <div className="max-w-2xl mx-auto space-y-8 relative z-10">
               <h2 className="text-4xl md:text-5xl font-mystery text-white italic">El verdadero giro</h2>
-              <p className="text-3xl text-[#d4af37] font-mystery">La IA no nos reemplaza. <br/><span className="text-white text-5xl not-italic">Nos desnuda.</span></p>
+              <p className="text-3xl text-[#00f2ff] font-mystery">La IA no nos reemplaza. <br/><span className="text-white text-5xl not-italic">Nos desnuda.</span></p>
               <div className="grid grid-cols-2 gap-8 pt-8">
                 <div className="space-y-2">
                   <p className="text-zinc-500 uppercase text-[10px] tracking-widest">Inteligencia</p>
@@ -268,7 +268,7 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
 
           {/* Conclusión */}
           <section className="text-center space-y-12 max-w-3xl mx-auto">
-            <div className="inline-block px-10 py-1 bg-[#d4af37] text-black text-[10px] font-black uppercase tracking-[0.5em] rounded-full">Destino</div>
+            <div className="inline-block px-10 py-1 bg-[#00f2ff] text-black text-[10px] font-black uppercase tracking-[0.5em] rounded-full">Destino</div>
             <div className="space-y-8">
               <h3 className="text-4xl md:text-5xl font-mystery text-white leading-tight italic">
                 La inteligencia artificial no decide nuestro destino espiritual. Nosotros lo hacemos.
@@ -276,14 +276,14 @@ const AISoulEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
               <p className="text-zinc-400 text-lg">
                 La IA es el espejo. El reflejo depende de quién se mire.
               </p>
-              <div className="p-10 border border-[#d4af37]/20 rounded-2xl bg-black/60 relative">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black px-4 text-[#d4af37]">
+              <div className="p-10 border border-[#00f2ff]/20 rounded-2xl bg-black/60 relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-black px-4 text-[#00f2ff]">
                   <Scale size={24} />
                 </div>
                 <p className="text-white text-xl md:text-2xl font-mystery leading-relaxed">
                   "Si queremos que sea una amenaza, lo será. Si elegimos que sea un catalizador, nos empujará —sin piedad y sin juicio— a convertirnos en una versión más consciente de nosotros mismos."
                 </p>
-                <p className="text-[#d4af37] font-bold text-3xl font-mystery mt-8">Y ese, quizá, es su propósito más elevado.</p>
+                <p className="text-[#00f2ff] font-bold text-3xl font-mystery mt-8">Y ese, quizá, es su propósito más elevado.</p>
               </div>
             </div>
           </section>
@@ -305,27 +305,27 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
       <div className="max-w-4xl w-full p-6 md:p-12 relative">
         <button 
           onClick={onClose}
-          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#d4af37]/20 rounded-full border border-white/10 text-[#d4af37] transition-all z-10"
+          className="fixed top-6 right-6 p-3 bg-white/5 hover:bg-[#00f2ff]/20 rounded-full border border-white/10 text-[#00f2ff] transition-all z-10"
         >
           <X size={24} />
         </button>
 
         <div className="flex flex-col items-center mb-16 text-center space-y-4">
-          <div className="w-20 h-20 border border-[#d4af37]/30 rounded-full flex items-center justify-center mb-6 relative">
-            <Globe className="text-[#d4af37] animate-pulse" size={40} />
-            <div className="absolute inset-0 border border-[#d4af37]/10 rounded-full scale-150 animate-ping"></div>
+          <div className="w-20 h-20 border border-[#00f2ff]/30 rounded-full flex items-center justify-center mb-6 relative">
+            <Globe className="text-[#00f2ff] animate-pulse" size={40} />
+            <div className="absolute inset-0 border border-[#00f2ff]/10 rounded-full scale-150 animate-ping"></div>
           </div>
-          <span className="text-[#d4af37] text-xs uppercase tracking-[0.5em] font-bold">Investigación Especial: Ref_02</span>
+          <span className="text-[#00f2ff] text-xs uppercase tracking-[0.5em] font-bold">Investigación Especial: Ref_02</span>
           <h1 className="text-4xl md:text-6xl font-mystery text-white leading-tight italic">
-            El Muro de Hielo: <br /><span className="text-[#d4af37]">Realidad o Metáfora</span>
+            El Muro de Hielo: <br /><span className="text-[#00f2ff]">Realidad o Metáfora</span>
           </h1>
           <p className="text-zinc-500 font-mono text-[10px] uppercase">Explorando los límites de nuestro mundo</p>
         </div>
 
         <div className="space-y-16 text-zinc-300 leading-relaxed pb-24 text-sm md:text-base">
           <section className="space-y-6">
-            <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
-              <AlertCircle className="text-[#d4af37]" size={20} />
+            <div className="flex items-center gap-3 border-b border-[#00f2ff]/20 pb-4">
+              <AlertCircle className="text-[#00f2ff]" size={20} />
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">1. ¿Qué dice la teoría conspirativa?</h2>
             </div>
             <div className="glass-card p-8 rounded-lg border-zinc-800 space-y-4">
@@ -333,9 +333,9 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
                 En el modelo terraplanista moderno, la Tierra es un disco plano con el Polo Norte en el centro y la Antártida formando un <strong>anillo periférico de hielo</strong> que actúa como barrera natural.
               </p>
               <ul className="list-none space-y-4 text-sm text-zinc-400">
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Este "muro" supuestamente mide cientos de metros de altura y miles de kilómetros de longitud, impidiendo que los océanos se derramen al vacío.</li>
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> El Tratado Antártico de 1959 se interpreta como una conspiración global para prohibir la exploración libre y ocultar tierras desconocidas.</li>
-                <li className="flex gap-3"><span className="text-[#d4af37] mt-1">•</span> Se añaden elementos como anomalías magnéticas, bases extraterrestres y las expediciones del almirante Richard Byrd sacadas de contexto.</li>
+                <li className="flex gap-3"><span className="text-[#00f2ff] mt-1">•</span> Este "muro" supuestamente mide cientos de metros de altura y miles de kilómetros de longitud, impidiendo que los océanos se derramen al vacío.</li>
+                <li className="flex gap-3"><span className="text-[#00f2ff] mt-1">•</span> El Tratado Antártico de 1959 se interpreta como una conspiración global para prohibir la exploración libre y ocultar tierras desconocidas.</li>
+                <li className="flex gap-3"><span className="text-[#00f2ff] mt-1">•</span> Se añaden elementos como anomalías magnéticas, bases extraterrestres y las expediciones del almirante Richard Byrd sacadas de contexto.</li>
               </ul>
               <p className="text-zinc-500 italic text-xs pt-4 border-t border-zinc-800">
                 Esta idea es una metáfora de los "límites del conocimiento", pero se presenta como realidad literal por sus defensores.
@@ -344,8 +344,8 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
           </section>
 
           <section className="space-y-6">
-            <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
-              <Globe className="text-[#d4af37]" size={20} />
+            <div className="flex items-center gap-3 border-b border-[#00f2ff]/20 pb-4">
+              <Globe className="text-[#00f2ff]" size={20} />
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">2. La realidad científica: ¿Qué es realmente la Antártida?</h2>
             </div>
             <p>
@@ -353,55 +353,55 @@ const IceWallEssay: React.FC<EssayModalProps> = ({ isOpen, onClose }) => {
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded">
-                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Ice Shelves (Plataformas)</h4>
+                <h4 className="text-[#00f2ff] text-xs font-bold uppercase mb-2">Ice Shelves (Plataformas)</h4>
                 <p className="text-sm text-zinc-500 leading-relaxed">Lo que llaman "muro" son las plataformas de hielo flotante (como Ross) con frentes verticales de hasta 60 metros sobre el nivel del mar.</p>
               </div>
               <div className="p-6 bg-zinc-900/50 border border-zinc-800 rounded">
-                <h4 className="text-[#d4af37] text-xs font-bold uppercase mb-2">Masa Continental</h4>
+                <h4 className="text-[#00f2ff] text-xs font-bold uppercase mb-2">Masa Continental</h4>
                 <p className="text-sm text-zinc-500 leading-relaxed">No es un anillo infinito; es un continente irregular visible desde satélites como Landsat o Sentinel de forma diaria.</p>
               </div>
             </div>
           </section>
 
           <section className="space-y-6">
-            <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
-              <Search className="text-[#d4af37]" size={20} />
+            <div className="flex items-center gap-3 border-b border-[#00f2ff]/20 pb-4">
+              <Search className="text-[#00f2ff]" size={20} />
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">3. Evidencia Verificable</h2>
             </div>
             <div className="space-y-6 text-sm">
               <div className="flex gap-4 p-4 glass-card rounded border-zinc-900">
-                <Map className="text-[#d4af37] flex-shrink-0" size={24} />
+                <Map className="text-[#00f2ff] flex-shrink-0" size={24} />
                 <p><span className="text-white font-bold">Circunnavegación:</span> Regatas como la Vendée Globe rodean el continente. Si fuera un muro exterior, la circunferencia sería físicamente imposible de recorrer en los tiempos registrados.</p>
               </div>
               <div className="flex gap-4 p-4 glass-card rounded border-zinc-900">
-                <Globe className="text-[#d4af37] flex-shrink-0" size={24} />
+                <Globe className="text-[#00f2ff] flex-shrink-0" size={24} />
                 <p><span className="text-white font-bold">Sol de 24 horas:</span> En el verano antártico, el sol nunca se oculta en el Polo Sur, algo imposible en un modelo plano.</p>
               </div>
               <div className="flex gap-4 p-4 glass-card rounded border-zinc-900">
-                <Info className="text-[#d4af37] flex-shrink-0" size={24} />
+                <Info className="text-[#00f2ff] flex-shrink-0" size={24} />
                 <p><span className="text-white font-bold">Turismo y Ciencia:</span> Más de 70 bases operan allí. Unos 70,000 turistas visitan el área anualmente en cruceros abiertos a cualquier persona con recursos.</p>
               </div>
             </div>
           </section>
 
           <section className="space-y-6">
-            <div className="flex items-center gap-3 border-b border-[#d4af37]/20 pb-4">
-              <Shield className="text-[#d4af37]" size={20} />
+            <div className="flex items-center gap-3 border-b border-[#00f2ff]/20 pb-4">
+              <Shield className="text-[#00f2ff]" size={20} />
               <h2 className="text-2xl font-mystery text-white uppercase tracking-wider">4. ¿Por qué parece el mayor secreto?</h2>
             </div>
             <div className="space-y-4">
               <p>Las <strong>condiciones extremas</strong> (-89°C) y el <strong>Tratado Antártico (1959)</strong> crean un aura de exclusividad. El tratado promueve la paz y la investigación, prohibiendo la minería y actividades militares, pero no la visita civil regulada.</p>
-              <div className="border-l-2 border-[#d4af37] pl-6 py-2 italic text-zinc-500">
+              <div className="border-l-2 border-[#00f2ff] pl-6 py-2 italic text-zinc-500">
                 "Lo que sí es 'secreto' es lo que aún no hemos descubierto bajo el hielo (ecosistemas subglaciales), pero eso se investiga abiertamente por científicos de todo el mundo."
               </div>
             </div>
           </section>
 
           <section className="pt-12 border-t border-zinc-900 text-center space-y-6">
-             <div className="inline-block px-4 py-1 bg-[#d4af37] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Conclusión</div>
+             <div className="inline-block px-4 py-1 bg-[#00f2ff] text-black text-[10px] font-bold uppercase tracking-widest rounded-full">Conclusión</div>
              <h3 className="text-3xl font-mystery text-white italic">Realidad vs. Metáfora</h3>
              <p className="max-w-2xl mx-auto text-zinc-400">
-               El "Muro de Hielo" como barrera que oculta un mundo secreto es ficción conspirativa. Sin embargo, las plataformas reales son maravillas naturales fundamentales para la estabilidad climática global, conteniendo el 70% del agua dulce del planeta.
+                El "Muro de Hielo" como barrera que oculta un world secreto es ficción conspirativa. Sin embargo, las plataformas reales son maravillas naturales fundamentales para la estabilidad climática global, conteniendo el 70% del agua dulce del planeta.
              </p>
           </section>
         </div>
@@ -434,7 +434,7 @@ export const Reflections: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-4">
-            <h2 className="text-[#d4af37] text-sm uppercase tracking-widest">Contenido & Reflexiones</h2>
+            <h2 className="text-[#00f2ff] text-sm uppercase tracking-widest">Contenido & Reflexiones</h2>
             <h3 className="text-4xl md:text-5xl font-mystery">Fragmentos de Realidad</h3>
           </div>
           <p className="text-zinc-400 max-w-md font-light">
@@ -447,17 +447,17 @@ export const Reflections: React.FC = () => {
             <article 
               key={item.id} 
               onClick={() => handleOpenEssay(item.id)}
-              className="group p-8 glass-card rounded-lg hover:bg-zinc-900/40 transition-all duration-300 cursor-pointer border-transparent hover:border-[#d4af37]/30"
+              className="group p-8 glass-card rounded-lg hover:bg-zinc-900/40 transition-all duration-300 cursor-pointer border-transparent hover:border-[#00f2ff]/30"
             >
               <div className="flex justify-between items-start mb-6">
                 <span className="text-[10px] tracking-widest text-zinc-500 uppercase">{item.category}</span>
                 <span className="text-[10px] tracking-widest text-zinc-600 uppercase">{item.date}</span>
               </div>
-              <h4 className="text-2xl font-mystery mb-4 group-hover:text-[#d4af37] transition-colors">{item.title}</h4>
+              <h4 className="text-2xl font-mystery mb-4 group-hover:text-[#00f2ff] transition-colors">{item.title}</h4>
               <p className="text-zinc-400 text-sm leading-relaxed mb-8 line-clamp-3">
                 {item.excerpt}
               </p>
-              <div className="flex items-center text-[#d4af37] text-sm font-bold transition-all transform group-hover:translate-x-2">
+              <div className="flex items-center text-[#00f2ff] text-sm font-bold transition-all transform group-hover:translate-x-2">
                 Leer ensayo <ArrowUpRight size={16} className="ml-1" />
               </div>
             </article>
@@ -466,7 +466,7 @@ export const Reflections: React.FC = () => {
 
         <div className="mt-16 text-center">
           <div className="inline-block p-12 relative group cursor-default">
-             <div className="absolute inset-0 border border-[#d4af37]/20 rounded-full scale-110 group-hover:scale-125 transition-transform duration-1000"></div>
+             <div className="absolute inset-0 border border-[#00f2ff]/20 rounded-full scale-110 group-hover:scale-125 transition-transform duration-1000"></div>
              <p className="text-2xl md:text-3xl font-mystery italic text-zinc-300 relative z-10">
                "Si no cuestionas el sistema, el sistema te cuestionará a ti."
              </p>

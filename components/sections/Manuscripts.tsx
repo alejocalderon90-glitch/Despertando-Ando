@@ -27,15 +27,15 @@ export const Manuscripts: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {BOOKS.map((book) => (
-            <div key={book.id} className="group relative flex flex-col bg-zinc-900/30 border border-zinc-800 p-8 rounded-sm hover:border-[#00f2ff]/30 transition-all duration-500">
+            <div key={book.id} className="group relative flex flex-col bg-zinc-900/30 border border-zinc-800 p-6 rounded-sm hover:border-[#00f2ff]/30 transition-all duration-500 reveal">
               <div className="absolute -top-3 -right-3 px-3 py-1 bg-zinc-950 border border-[#00f2ff]/40 text-[#00f2ff] text-[10px] uppercase font-bold tracking-widest z-10">
                 {book.tag}
               </div>
               
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="w-full md:w-48 aspect-[2/3] relative flex-shrink-0 shadow-2xl overflow-hidden border border-zinc-700">
+              <div className="flex flex-col gap-6 items-start">
+                <div className="w-full aspect-[2/3] relative shadow-2xl overflow-hidden border border-zinc-700">
                   <img 
                     src={book.coverImage} 
                     alt={book.title} 
@@ -45,18 +45,18 @@ export const Manuscripts: React.FC = () => {
                 </div>
 
                 <div className="flex-1 space-y-4">
-                  <h4 className="text-3xl font-mystery text-white group-hover:text-[#00f2ff] transition-colors">{book.title}</h4>
+                  <h4 className="text-2xl font-mystery text-white group-hover:text-[#00f2ff] transition-colors">{book.title}</h4>
                   <div className="flex items-center gap-2 text-zinc-400 text-xs italic">
                     <User size={14} /> {book.subtitle}
                   </div>
-                  <p className="text-zinc-500 text-sm leading-relaxed">
+                  <p className="text-zinc-500 text-xs leading-relaxed line-clamp-3">
                     {book.description}
                   </p>
                   
-                  <div className="pt-6">
+                  <div className="pt-4">
                     <Button 
                       variant="outline" 
-                      className="w-full md:w-auto"
+                      className="w-full"
                       onClick={() => handleDownload(book.title)}
                     >
                       <Download size={16} className="mr-2" /> Descargar PDF
@@ -65,7 +65,7 @@ export const Manuscripts: React.FC = () => {
                 </div>
               </div>
               
-              <div className="mt-8 pt-6 border-t border-zinc-800 flex justify-between items-center text-[10px] text-zinc-600 uppercase tracking-widest">
+              <div className="mt-6 pt-4 border-t border-zinc-800 flex justify-between items-center text-[10px] text-zinc-600 uppercase tracking-widest">
                 <span className="flex items-center gap-1"><ShieldCheck size={12} /> Verificado</span>
                 <span>Alejandro R.C.</span>
               </div>

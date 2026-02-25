@@ -28,11 +28,11 @@ export const Hero: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <Button variant="primary" size="lg" onClick={() => document.getElementById('saga')?.scrollIntoView({ behavior: 'smooth' })}>
-            Explorar la verdad
+          <Button variant="primary" size="lg" onClick={() => document.getElementById('manuscritos')?.scrollIntoView({ behavior: 'smooth' })}>
+            Acceder al archivo
           </Button>
-          <Button variant="outline" size="lg" onClick={() => document.getElementById('libros')?.scrollIntoView({ behavior: 'smooth' })}>
-            Leer los mini-libros
+          <Button variant="outline" size="lg" onClick={() => document.getElementById('saga')?.scrollIntoView({ behavior: 'smooth' })}>
+            Explorar la saga
           </Button>
         </div>
       </div>

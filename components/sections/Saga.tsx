@@ -32,11 +32,11 @@ export const Saga: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar">
             {WORLDS.map((world) => (
-              <div key={world.id} className="p-4 border border-zinc-800 rounded-lg hover:border-[#00f2ff]/50 transition-colors bg-zinc-900/50">
-                <span className="text-[#00f2ff] font-bold block mb-1">Mundo {world.id}</span>
-                <p className="text-xs text-zinc-500">{world.description}</p>
+              <div key={world.id} className="p-4 border border-zinc-800 rounded-lg hover:border-[#00f2ff]/50 transition-colors bg-zinc-900/50 reveal">
+                <span className="text-[#00f2ff] font-bold block mb-1 text-sm">Mundo {world.id}</span>
+                <p className="text-[10px] text-zinc-500 leading-tight">{world.name}</p>
               </div>
             ))}
           </div>

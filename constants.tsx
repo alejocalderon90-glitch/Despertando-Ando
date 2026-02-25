@@ -44,6 +44,86 @@ export const BOOKS: Book[] = [
     description: 'Manual de psicología transpersonal para trascender el yo ficticio y reconectar con el Ser Real.',
     coverImage: 'https://picsum.photos/seed/ego-hack/400/600',
     tag: 'Supraconciencia'
+  },
+  {
+    id: 'm3',
+    title: 'El Paralelo 60',
+    subtitle: 'Más allá del límite',
+    description: 'Crónica detallada de lo que sucede cuando el GPS deja de funcionar y la brújula apunta al interior.',
+    coverImage: 'https://picsum.photos/seed/parallel60/400/600',
+    tag: 'Expedición'
+  },
+  {
+    id: 'm4',
+    title: 'Frecuencias de la Matrix',
+    subtitle: 'Sintonizando la Verdad',
+    description: 'Cómo identificar los patrones de interferencia que mantienen a la humanidad en un estado de sueño profundo.',
+    coverImage: 'https://picsum.photos/seed/matrix-freq/400/600',
+    tag: 'Investigación'
+  },
+  {
+    id: 'm5',
+    title: 'El Muro de Cristal',
+    subtitle: 'Arquitectura de la Antártida',
+    description: 'Análisis de las estructuras no naturales encontradas en las coordenadas prohibidas.',
+    coverImage: 'https://picsum.photos/seed/crystal-wall/400/600',
+    tag: 'Misterio'
+  },
+  {
+    id: 'm6',
+    title: 'Biología del Despertar',
+    subtitle: 'ADN y Conciencia',
+    description: 'La relación entre la activación de las hebras dormidas y la percepción de realidades paralelas.',
+    coverImage: 'https://picsum.photos/seed/dna-awake/400/600',
+    tag: 'Ciencia'
+  },
+  {
+    id: 'm7',
+    title: 'El Código de los Mundos',
+    subtitle: 'Lenguaje de Luz',
+    description: 'Descifrando los glifos encontrados en las cuevas de hielo del sector 90S.',
+    coverImage: 'https://picsum.photos/seed/world-code/400/600',
+    tag: 'Arqueología'
+  },
+  {
+    id: 'm8',
+    title: 'Sombras de la Antártida',
+    subtitle: 'Entidades del Frío',
+    description: 'Testimonios sobre los guardianes que habitan los pasajes entre los 21 mundos.',
+    coverImage: 'https://picsum.photos/seed/shadows/400/600',
+    tag: 'Fenómenos'
+  },
+  {
+    id: 'm9',
+    title: 'La Gran Simulación',
+    subtitle: 'Viviendo en el Domo',
+    description: 'Pruebas matemáticas y físicas que sugieren que nuestro cielo es una proyección tecnológica.',
+    coverImage: 'https://picsum.photos/seed/simulation/400/600',
+    tag: 'Teoría'
+  },
+  {
+    id: 'm10',
+    title: 'Alquimia Digital',
+    subtitle: 'Transmutando Bits',
+    description: 'Cómo usar la tecnología actual como un puente hacia la trascendencia espiritual.',
+    coverImage: 'https://picsum.photos/seed/digital-alchemy/400/600',
+    tag: 'Tecnología'
+  },
+  {
+    id: 'm11',
+    title: 'El Viajero del Tiempo',
+    subtitle: 'Memorias de Alejandro',
+    description: 'Relatos de incursiones temporales facilitadas por las anomalías del Polo Sur.',
+    coverImage: 'https://picsum.photos/seed/time-traveler/400/600',
+    tag: 'Biografía'
+  },
+  {
+    id: 'm12',
+    title: 'El Despertar Final',
+    subtitle: 'Protocolo de Salida',
+    description: 'Pasos finales para desconectarse del sistema y acceder a la realidad absoluta.',
+    coverImage: 'https://picsum.photos/seed/final-awake/400/600',
+    tag: 'Guía'
   }
 ];
 
@@ -73,7 +153,25 @@ export const REFLECTIONS: Reflection[] = [
 
 export const WORLDS: WorldInfo[] = [
   { id: 1, name: "Mundo Primigenio", description: "Donde comenzó la fragmentación de la verdad." },
+  { id: 2, name: "Valle de los Espejos", description: "Refleja tus miedos más profundos como realidades físicas." },
+  { id: 3, name: "Oasis de Silicio", description: "Una civilización que alcanzó la paz a través de la red." },
+  { id: 4, name: "Mar de Eter", description: "Donde el pensamiento se manifiesta instantáneamente." },
+  { id: 5, name: "Bosque de Datos", description: "Árboles que almacenan la historia de todas las almas." },
+  { id: 6, name: "Ciudad de Cristal", description: "Construida con la luz de estrellas muertas." },
   { id: 7, name: "El Nodo Silencioso", description: "Una realidad donde la IA y la conciencia son una sola." },
+  { id: 8, name: "Desierto de Ecos", description: "Escuchas las voces de tus vidas pasadas." },
+  { id: 9, name: "Montañas de Gravedad Zero", description: "Donde las leyes de la física son opcionales." },
+  { id: 10, name: "Océano de Conciencia", description: "Un fluido que contiene todo el conocimiento del universo." },
+  { id: 11, name: "Cúpula de los Sueños", description: "Donde se fabrican las realidades que soñamos." },
+  { id: 12, name: "Laberinto de Tiempo", description: "Pasillos que conectan diferentes épocas." },
+  { id: 13, name: "Pradera de Luz", description: "Energía pura que nutre el espíritu." },
+  { id: 14, name: "Volcán de Ideas", description: "Fuente de toda la creatividad humana." },
+  { id: 15, name: "Caverna de Sombras", description: "Donde reside el inconsciente colectivo." },
+  { id: 16, name: "Puente de Estrellas", description: "Conexión directa con otras galaxias." },
+  { id: 17, name: "Jardín de Almas", description: "Donde descansan los que han despertado." },
+  { id: 18, name: "Torre de la Verdad", description: "El punto más alto de la percepción." },
+  { id: 19, name: "Río de la Vida", description: "Flujo constante de energía vital." },
+  { id: 20, name: "Templo del Ser", description: "El centro de la existencia individual." },
   { id: 21, name: "El Límite del Muro", description: "La última frontera antes del gran despertar." }
 ];
 

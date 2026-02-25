@@ -60,12 +60,12 @@ export const Oracle: React.FC = () => {
           </form>
 
           {response && (
-            <div className="mt-10 p-6 bg-[#0066cc]/10 border-l-4 border-[#00f2ff] rounded-r-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div className="mt-10 p-6 bg-[#0066cc]/10 border-l-4 border-[#00f2ff] rounded-r-lg animate-in fade-in slide-in-from-bottom-4 duration-700 reveal">
               <h5 className="text-[#00f2ff] text-xs font-bold uppercase mb-4 tracking-tighter flex items-center">
                 <span className="w-2 h-2 bg-[#00f2ff] rounded-full mr-2 animate-ping"></span>
                 Respuesta del Oráculo
               </h5>
-              <p className="text-zinc-300 leading-relaxed font-light italic">
+              <p className="text-zinc-300 leading-relaxed font-light italic glitch" data-text={response}>
                 {response}
               </p>
             </div>

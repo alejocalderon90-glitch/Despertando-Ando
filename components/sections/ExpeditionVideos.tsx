@@ -87,9 +87,40 @@ export const ExpeditionVideos: React.FC = () => {
             </div>
           </div>
         </div>
+        {/* Timeline Section */}
+        <div className="mt-32 space-y-16 reveal">
+          <div className="text-center">
+            <h4 className="text-[#00f2ff] text-xs uppercase tracking-[0.5em] mb-4">Cronología de la Verdad</h4>
+            <h5 className="text-3xl font-mystery italic">El Camino de Alejandro</h5>
+          </div>
+          
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#00f2ff]/30 to-transparent -translate-x-1/2"></div>
+            
+            <div className="space-y-24">
+              {[
+                { year: '2018', title: 'El Llamado', desc: 'Alejandro recibe la primera señal encriptada desde una estación meteorológica abandonada.' },
+                { year: '2020', title: 'Cruce del Paralelo 60', desc: 'La expedición rompe el límite oficial. El GPS deja de mostrar coordenadas terrestres.' },
+                { year: '2022', title: 'El Muro de Cristal', desc: 'Primer contacto visual con la estructura que rodea los 21 mundos.' },
+                { year: '2024', title: 'El Gran Despertar', desc: 'Apertura del portal Despertando Ando para compartir los hallazgos con la humanidad.' }
+              ].map((item, idx) => (
+                <div key={idx} className={`flex items-center gap-8 ${idx % 2 === 0 ? 'flex-row-reverse' : ''}`}>
+                  <div className="flex-1 text-right">
+                    <div className={idx % 2 === 0 ? 'text-left' : 'text-right'}>
+                      <span className="text-[#00f2ff] font-mono text-xl font-bold">{item.year}</span>
+                      <h6 className="text-white font-mystery text-2xl mt-1">{item.title}</h6>
+                      <p className="text-zinc-500 text-sm mt-2 font-light">{item.desc}</p>
+                    </div>
+                  </div>
+                  <div className="relative z-10 w-4 h-4 bg-[#00f2ff] rounded-full shadow-[0_0_15px_rgba(0,242,255,0.8)] border-4 border-black"></div>
+                  <div className="flex-1"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* Fullscreen Gallery Overlay */}
       {showGallery && (
         <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl animate-in fade-in duration-500 flex flex-col overflow-y-auto">
           <div className="sticky top-0 p-6 flex items-center justify-between border-b border-zinc-900 bg-black/50 z-10">

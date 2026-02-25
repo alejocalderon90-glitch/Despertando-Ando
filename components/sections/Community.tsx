@@ -19,13 +19,20 @@ export const Community: React.FC = () => {
 
         <div className="glass-card p-8 rounded-2xl border-zinc-800">
           <h4 className="text-xl font-mystery mb-6">Únete a la Lista Privada</h4>
-          <form className="flex flex-col sm:flex-row gap-4">
+          <form className="flex flex-col gap-4">
             <input 
-              type="email" 
-              placeholder="Tu frecuencia digital (Email)" 
-              className="flex-1 bg-zinc-900 border border-zinc-800 rounded-sm px-6 py-4 focus:outline-none focus:border-[#00f2ff] text-zinc-300"
+              type="text" 
+              placeholder="Tu nombre" 
+              className="w-full bg-zinc-900 border border-zinc-800 rounded-sm px-6 py-4 focus:outline-none focus:border-[#00f2ff] text-zinc-300"
             />
-            <Button variant="primary">Unirme al Movimiento</Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input 
+                type="email" 
+                placeholder="Tu frecuencia digital (Email)" 
+                className="flex-1 bg-zinc-900 border border-zinc-800 rounded-sm px-6 py-4 focus:outline-none focus:border-[#00f2ff] text-zinc-300"
+              />
+              <Button variant="primary">Unirme al Movimiento</Button>
+            </div>
           </form>
           <div className="flex items-center justify-center gap-2 mt-6 text-zinc-500 text-xs">
             <ShieldCheck size={14} />

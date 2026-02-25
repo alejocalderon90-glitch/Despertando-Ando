@@ -180,5 +180,6 @@ export const NAV_LINKS = [
   { name: 'Expedición', href: '#expedicion' },
   { name: 'Manuscritos', href: '#manuscritos' },
   { name: 'Reflexiones', href: '#reflexiones' },
+  { name: 'Llamada Alejandro', href: '#llamada-alejandro' },
   { name: 'Oráculo AI', href: '#oraculo' },
 ];

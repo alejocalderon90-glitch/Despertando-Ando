@@ -1,5 +1,5 @@
 {
   "name": "Despertando Ando",
   "description": "Un portal místico-tecnológico dedicado al despertar de la conciencia, la exploración de realidades ocultas y la saga de Alejandro y los Misterios de la Antártida.",
-  "requestFramePermissions": []
+  "requestFramePermissions": ["microphone"]
 }

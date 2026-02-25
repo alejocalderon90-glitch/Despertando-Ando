@@ -7,6 +7,7 @@ import { ExpeditionVideos } from './components/sections/ExpeditionVideos';
 import { Manuscripts } from './components/sections/Manuscripts';
 import { Reflections } from './components/sections/Reflections';
 import { Oracle } from './components/sections/Oracle';
+import { VoiceCall } from './components/chat/VoiceCall';
 import { Community } from './components/sections/Community';
 import { Footer } from './components/layout/Footer';
 import { ChatAgent } from './components/chat/ChatAgent';
@@ -219,6 +220,7 @@ function App() {
         <ExpeditionVideos />
         <Manuscripts />
         <Oracle />
+        <VoiceCall />
         <Reflections />
         <Community />
       </main>

@@ -43,14 +43,38 @@ export const VoiceCall: React.FC = () => {
     try {
       setIsConnecting(true);
       
-      // 1. Setup Audio Context
+      // 1. Check for browser support
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        throw new Error("Tu navegador no soporta el acceso al micrófono o no estás en una conexión segura (HTTPS).");
+      }
+
+      // 2. Setup Audio Context
       audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       
-      // 2. Get Microphone Stream
-      streamRef.current = await navigator.mediaDevices.getUserMedia({ audio: true });
+      // 3. Get Microphone Stream
+      try {
+        streamRef.current = await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch (micErr: any) {
+        console.error("Microphone access error:", micErr);
+        if (micErr.name === 'NotAllowedError') {
+          throw new Error("Acceso al micrófono denegado. Por favor, permite el acceso en la configuración de tu navegador.");
+        } else if (micErr.name === 'NotFoundError') {
+          throw new Error("No se encontró ningún micrófono conectado.");
+        } else if (micErr.name === 'SecurityError') {
+          throw new Error("Error de seguridad al intentar acceder al micrófono. Asegúrate de estar en HTTPS.");
+        }
+        throw new Error("No se pudo acceder al micrófono.");
+      }
       
-      // 3. Initialize Gemini Live
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      // 4. Initialize Gemini Live
+      // Try multiple ways to get the API key for maximum compatibility (Vercel/AI Studio)
+      const apiKey = process.env.GEMINI_API_KEY || (window as any).process?.env?.API_KEY || (window as any).process?.env?.GEMINI_API_KEY;
+      
+      if (!apiKey || apiKey === "undefined" || apiKey === "") {
+        throw new Error("Clave de API de Gemini no detectada. Si estás en Vercel, asegúrate de haber configurado la variable de entorno GEMINI_API_KEY.");
+      }
+
+      const ai = new GoogleGenAI({ apiKey });
       
       const sessionPromise = ai.live.connect({
         model: "gemini-2.5-flash-native-audio-preview-09-2025",
@@ -93,6 +117,7 @@ export const VoiceCall: React.FC = () => {
           onclose: () => endCall(),
           onerror: (err) => {
             console.error("Live API Error:", err);
+            // Don't alert here to avoid spamming, just end the call
             endCall();
           }
         }
@@ -100,10 +125,11 @@ export const VoiceCall: React.FC = () => {
 
       sessionRef.current = await sessionPromise;
 
-    } catch (err) {
+    } catch (err: any) {
       console.error("Failed to start call:", err);
       setIsConnecting(false);
-      alert("No se pudo acceder al micrófono o conectar con Alejandro.");
+      alert(err.message || "No se pudo conectar con Alejandro.");
+      endCall();
     }
   };
 

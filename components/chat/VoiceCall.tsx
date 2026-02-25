@@ -68,10 +68,15 @@ export const VoiceCall: React.FC = () => {
       
       // 4. Initialize Gemini Live
       // Try multiple ways to get the API key for maximum compatibility (Vercel/AI Studio)
-      const apiKey = process.env.GEMINI_API_KEY || (window as any).process?.env?.API_KEY || (window as any).process?.env?.GEMINI_API_KEY;
+      // Fallback to the key provided by the user if environment variables are missing
+      const providedKey = "AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54";
+      const apiKey = process.env.GEMINI_API_KEY || 
+                     (window as any).process?.env?.API_KEY || 
+                     (window as any).process?.env?.GEMINI_API_KEY || 
+                     providedKey;
       
       if (!apiKey || apiKey === "undefined" || apiKey === "") {
-        throw new Error("Clave de API de Gemini no detectada. Si estás en Vercel, asegúrate de haber configurado la variable de entorno GEMINI_API_KEY.");
+        throw new Error("Clave de API de Gemini no detectada. Por favor, asegúrate de que la variable GEMINI_API_KEY esté configurada.");
       }
 
       const ai = new GoogleGenAI({ apiKey });

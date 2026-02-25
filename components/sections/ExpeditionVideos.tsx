@@ -17,7 +17,7 @@ export const ExpeditionVideos: React.FC = () => {
             <h2 className="text-[#00f2ff] text-sm uppercase tracking-[0.4em] flex items-center justify-center md:justify-start gap-2">
               <Activity size={16} className="animate-pulse" /> Material Clasificado
             </h2>
-            <h3 className="text-4xl md:text-6xl font-mystery italic">Videos de la Expedición</h3>
+            <h3 className="text-4xl md:text-6xl font-mystery italic glitch" data-text="Videos de la Expedición">Videos de la Expedición</h3>
             <p className="text-zinc-500 max-w-xl font-light">
               Registros visuales obtenidos durante las incursiones más allá del paralelo 60. 
               Advertencia: Las imágenes pueden contener distorsiones de realidad.

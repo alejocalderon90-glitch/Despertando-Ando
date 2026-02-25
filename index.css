@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--black);
-  background-image: linear-gradient(rgba(5, 5, 5, 0.97), rgba(5, 5, 5, 0.97)), url('https://picsum.photos/seed/matrix-tech/1920/1080');
+  background-image: linear-gradient(rgba(5, 5, 5, 0.95), rgba(5, 5, 5, 0.95)), url('https://picsum.photos/seed/cyber-discovery/1920/1080');
   background-attachment: fixed;
   background-size: cover;
   color: var(--white);
@@ -118,7 +118,7 @@ body {
 .loading-screen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.9)), url('https://picsum.photos/seed/matrix-evolution/1920/1080');
+  background: linear-gradient(rgba(5, 5, 5, 0.98), rgba(5, 5, 5, 0.98)), url('https://picsum.photos/seed/matrix-core/1920/1080');
   background-size: cover;
   background-position: center;
   display: flex;

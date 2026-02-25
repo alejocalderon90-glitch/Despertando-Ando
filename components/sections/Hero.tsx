@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
           La verdad ha sido fragmentada
         </div>
         
-        <h1 className="text-5xl md:text-8xl font-mystery leading-tight">
+        <h1 className="text-5xl md:text-8xl font-mystery leading-tight glitch" data-text="La realidad es el velo.">
           La realidad es el velo. <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2ff] to-white italic">
             Es hora de mirar detrás.

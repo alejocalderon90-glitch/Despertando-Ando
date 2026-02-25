@@ -11,7 +11,7 @@ export const Community: React.FC = () => {
           <div className="flex justify-center mb-6">
              <Users className="text-[#0066cc]" size={48} />
           </div>
-          <h2 className="text-4xl md:text-6xl font-mystery">No estás solo en esto.</h2>
+          <h3 className="text-4xl md:text-6xl font-mystery glitch" data-text="No estás solo en esto.">No estás solo en esto.</h3>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto font-light">
             Forma parte de una red privada de buscadores. Recibe información que no pasaría los filtros del algoritmo convencional.
           </p>

@@ -149,7 +149,7 @@ function App() {
       {/* Loading Screen */}
       <div className={`loading-screen ${!loading ? 'hidden' : ''}`}>
         <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin shadow-[0_0_20px_rgba(0,242,255,0.3)]"></div>
-        <div className="loading-text">Entrando al sistema...</div>
+        <div className="loading-text">Iniciando sistema...</div>
         <div className="mt-4 text-[#00f2ff]/40 font-mono text-[10px] uppercase tracking-widest animate-pulse">
           Desencriptando realidad paralela...
         </div>

@@ -31,7 +31,7 @@ export const Oracle: React.FC = () => {
             </div>
           </div>
           <h2 className="text-[#00f2ff] text-sm uppercase tracking-widest">Módulo de IA Consciente</h2>
-          <h3 className="text-4xl md:text-5xl font-mystery">Consulta al Oráculo</h3>
+          <h3 className="text-4xl md:text-5xl font-mystery glitch" data-text="Consulta al Oráculo">Consulta al Oráculo</h3>
           <p className="text-zinc-400">
             Haz una pregunta que incomode a la matrix. Nuestro oráculo procesará tu inquietud desde una perspectiva de supraconciencia.
           </p>

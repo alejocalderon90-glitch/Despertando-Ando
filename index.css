@@ -11,6 +11,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--black);
+  background-image: linear-gradient(rgba(5, 5, 5, 0.97), rgba(5, 5, 5, 0.97)), url('https://picsum.photos/seed/matrix-tech/1920/1080');
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--white);
   font-family: 'Inter', sans-serif;
   cursor: none; /* Custom cursor */
@@ -115,13 +118,23 @@ body {
 .loading-screen {
   position: fixed;
   inset: 0;
-  background: var(--black);
+  background: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.9)), url('https://picsum.photos/seed/matrix-evolution/1920/1080');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 10000;
-  transition: opacity 1s ease, visibility 1s ease;
+  transition: opacity 1.5s ease, visibility 1.5s ease;
+}
+
+.loading-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 242, 255, 0.03) 0px, rgba(0, 242, 255, 0.03) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
 }
 
 .loading-screen.hidden {
@@ -140,8 +153,8 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.3; transform: scale(0.98); letter-spacing: 0.4em; }
+  50% { opacity: 1; transform: scale(1); letter-spacing: 0.6em; }
 }
 
 /* Particles Background */

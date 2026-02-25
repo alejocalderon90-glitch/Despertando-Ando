@@ -42,27 +42,24 @@ const ParticleBackground: React.FC = () => {
       x: number;
       y: number;
       size: number;
-      speedX: number;
       speedY: number;
       opacity: number;
 
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2;
-        this.speedX = (Math.random() - 0.5) * 0.5;
-        this.speedY = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 1.5 + 0.5;
+        this.speedY = Math.random() * 2 + 0.5;
         this.opacity = Math.random() * 0.5;
       }
 
       update() {
-        this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) {
+          this.y = -20;
+          this.x = Math.random() * canvas.width;
+        }
       }
 
       draw() {
@@ -71,12 +68,16 @@ const ParticleBackground: React.FC = () => {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
+        
+        // Subtle trail
+        ctx.fillStyle = `rgba(0, 242, 255, ${this.opacity * 0.3})`;
+        ctx.fillRect(this.x - 0.5, this.y - 15, 1, 15);
       }
     }
 
     const init = () => {
       particles = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 150; i++) {
         particles.push(new Particle());
       }
     };
@@ -147,8 +148,11 @@ function App() {
     <div className="min-h-screen selection:bg-[#00f2ff] selection:text-black">
       {/* Loading Screen */}
       <div className={`loading-screen ${!loading ? 'hidden' : ''}`}>
-        <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin"></div>
-        <div className="loading-text">Iniciando sistema...</div>
+        <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin shadow-[0_0_20px_rgba(0,242,255,0.3)]"></div>
+        <div className="loading-text">Entrando al sistema...</div>
+        <div className="mt-4 text-[#00f2ff]/40 font-mono text-[10px] uppercase tracking-widest animate-pulse">
+          Desencriptando realidad paralela...
+        </div>
       </div>
 
       {/* Custom Cursor */}

@@ -107,12 +107,16 @@ const ParticleBackground: React.FC = () => {
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [accessGranted, setAccessGranted] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [dotPos, setDotPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     // Loading simulation
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => {
+      setAccessGranted(true);
+      setTimeout(() => setLoading(false), 1000); // Allow fade out
+    }, 2500);
 
     // Custom cursor logic
     const moveCursor = (e: MouseEvent) => {
@@ -147,7 +151,7 @@ function App() {
   return (
     <div className="min-h-screen selection:bg-[#00f2ff] selection:text-black">
       {/* Loading Screen */}
-      <div className={`loading-screen ${!loading ? 'hidden' : ''}`}>
+      <div className={`loading-screen ${accessGranted ? 'hidden' : ''}`}>
         <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin shadow-[0_0_20px_rgba(0,242,255,0.3)]"></div>
         <div className="loading-text">Iniciando sistema...</div>
         <div className="mt-4 text-[#00f2ff]/40 font-mono text-[10px] uppercase tracking-widest animate-pulse">
@@ -155,82 +159,85 @@ function App() {
         </div>
       </div>
 
-      {/* Custom Cursor */}
-      <div 
-        className="custom-cursor hidden md:block" 
-        style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px`, transform: 'translate(-50%, -50%)' }}
-      ></div>
-      <div 
-        className="custom-cursor-dot hidden md:block" 
-        style={{ left: `${dotPos.x}px`, top: `${dotPos.y}px`, transform: 'translate(-50%, -50%)' }}
-      ></div>
+      {/* Main Content - Hidden until access granted */}
+      <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        {/* Custom Cursor */}
+        <div 
+          className="custom-cursor hidden md:block" 
+          style={{ left: `${cursorPos.x}px`, top: `${cursorPos.y}px`, transform: 'translate(-50%, -50%)' }}
+        ></div>
+        <div 
+          className="custom-cursor-dot hidden md:block" 
+          style={{ left: `${dotPos.x}px`, top: `${dotPos.y}px`, transform: 'translate(-50%, -50%)' }}
+        ></div>
 
-      <ParticleBackground />
-      <Navbar />
-      
-      <main>
-        <Hero />
+        <ParticleBackground />
+        <Navbar />
+        
+        <main>
+          <Hero />
 
-        {/* What is Despertando Ando */}
-        <section id="about" className="py-24 px-4 bg-black">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-12 items-center mb-20 reveal">
-              <div className="lg:col-span-2 space-y-6">
-                <h2 className="text-[#00f2ff] text-sm uppercase tracking-widest">El Manifiesto</h2>
-                <h3 className="text-4xl md:text-6xl font-mystery">Un portal diseñado para <br/>hackear tu percepción.</h3>
-                <p className="text-zinc-400 text-xl font-light leading-relaxed">
-                  No somos solo una web de misterio. Somos un laboratorio de conciencia. 
-                  En <strong>Despertando Ando</strong>, unimos la narrativa épica de la saga de Alejandro 
-                  con herramientas prácticas de hacking mental para aquellos que sienten que este 
-                  mundo es mucho más de lo que nos han contado.
-                </p>
+          {/* What is Despertando Ando */}
+          <section id="about" className="py-24 px-4 bg-black">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-3 gap-12 items-center mb-20 reveal">
+                <div className="lg:col-span-2 space-y-6">
+                  <h2 className="text-[#00f2ff] text-sm uppercase tracking-widest">El Manifiesto</h2>
+                  <h3 className="text-4xl md:text-6xl font-mystery">Un portal diseñado para <br/>hackear tu percepción.</h3>
+                  <p className="text-zinc-400 text-xl font-light leading-relaxed">
+                    No somos solo una web de misterio. Somos un laboratorio de conciencia. 
+                    En <strong>Despertando Ando</strong>, unimos la narrativa épica de la saga de Alejandro 
+                    con herramientas prácticas de hacking mental para aquellos que sienten que este 
+                    mundo es mucho más de lo que nos han contado.
+                  </p>
+                </div>
+                <div className="hidden lg:block">
+                   <div className="w-full aspect-square border border-[#00f2ff]/20 rounded-full flex items-center justify-center relative">
+                      <div className="w-3/4 h-3/4 border border-[#00f2ff]/40 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
+                        <div className="w-4 h-4 bg-[#00f2ff] rounded-full"></div>
+                      </div>
+                      <Eye className="absolute text-[#00f2ff]/50" size={48} />
+                   </div>
+                </div>
               </div>
-              <div className="hidden lg:block">
-                 <div className="w-full aspect-square border border-[#00f2ff]/20 rounded-full flex items-center justify-center relative">
-                    <div className="w-3/4 h-3/4 border border-[#00f2ff]/40 rounded-full flex items-center justify-center animate-[spin_20s_linear_infinite]">
-                      <div className="w-4 h-4 bg-[#00f2ff] rounded-full"></div>
-                    </div>
-                    <Eye className="absolute text-[#00f2ff]/50" size={48} />
-                 </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <AboutFeature 
+                  icon={<Globe size={32} />} 
+                  title="Geografía Oculta" 
+                  text="Descubre lo que la Antártida y otros puntos ciegos del mapa esconden tras los muros de hielo." 
+                />
+                <AboutFeature 
+                  icon={<Cpu size={32} />} 
+                  title="Soberanía Digital" 
+                  text="Usa la IA y la tecnología como herramientas de liberación, no de control social." 
+                />
+                <AboutFeature 
+                  icon={<Shield size={32} />} 
+                  title="Inmunidad de Conciencia" 
+                  text="Protege tu frecuencia vibratoria de las interferencias de la matrix y el sistema." 
+                />
+                <AboutFeature 
+                  icon={<Eye size={32} />} 
+                  title="Visión Remota" 
+                  text="Expande tus capacidades cognitivas a través de nuestros mini-libros de entrenamiento." 
+                />
               </div>
             </div>
+          </section>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <AboutFeature 
-                icon={<Globe size={32} />} 
-                title="Geografía Oculta" 
-                text="Descubre lo que la Antártida y otros puntos ciegos del mapa esconden tras los muros de hielo." 
-              />
-              <AboutFeature 
-                icon={<Cpu size={32} />} 
-                title="Soberanía Digital" 
-                text="Usa la IA y la tecnología como herramientas de liberación, no de control social." 
-              />
-              <AboutFeature 
-                icon={<Shield size={32} />} 
-                title="Inmunidad de Conciencia" 
-                text="Protege tu frecuencia vibratoria de las interferencias de la matrix y el sistema." 
-              />
-              <AboutFeature 
-                icon={<Eye size={32} />} 
-                title="Visión Remota" 
-                text="Expande tus capacidades cognitivas a través de nuestros mini-libros de entrenamiento." 
-              />
-            </div>
-          </div>
-        </section>
+          <Saga />
+          <ExpeditionVideos />
+          <Manuscripts />
+          <Oracle />
+          <VoiceCall />
+          <Reflections />
+          <Community />
+        </main>
 
-        <Saga />
-        <ExpeditionVideos />
-        <Manuscripts />
-        <Oracle />
-        <VoiceCall />
-        <Reflections />
-        <Community />
-      </main>
-
-      <ChatAgent />
-      <Footer />
+        <ChatAgent />
+        <Footer />
+      </div>
     </div>
   );
 }

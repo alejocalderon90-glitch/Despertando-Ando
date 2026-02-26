@@ -32,12 +32,12 @@ export const Navbar: React.FC = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-xs uppercase tracking-widest text-zinc-400 hover:text-[#00f2ff] transition-colors"
+              className="text-xs uppercase tracking-widest text-zinc-400 hover:text-[#00f2ff] transition-colors hover-beam px-4 py-2"
             >
               {link.name}
             </a>
           ))}
-          <button className="px-6 py-2 border border-[#00f2ff] text-[#00f2ff] text-xs uppercase tracking-widest hover:bg-[#00f2ff] hover:text-black transition-all">
+          <button className="px-6 py-2 border border-[#00f2ff] text-[#00f2ff] text-xs uppercase tracking-widest hover:bg-[#00f2ff] hover:text-black hover:shadow-[0_0_20px_#00f2ff] transition-all duration-300">
             Únete
           </button>
         </div>

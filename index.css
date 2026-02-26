@@ -240,6 +240,47 @@ body {
   to { opacity: 1; transform: scale(1); }
 }
 
+/* Frost / Ice Overlay */
+.frost-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9000;
+  box-shadow: inset 0 0 150px rgba(180, 230, 255, 0.15), inset 0 0 50px rgba(0, 242, 255, 0.1);
+  background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(200, 240, 255, 0.1) 100%);
+  mix-blend-mode: screen;
+}
+
+.frost-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9001;
+  opacity: 0.4;
+  background-image: url('https://img.freepik.com/free-photo/ice-texture_1122-2059.jpg?w=1380&t=st=1708970000~exp=1708970600~hmac=...'); /* Fallback or use a reliable pattern */
+  /* Using a noise pattern/gradient instead for reliability */
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 10px),
+                    radial-gradient(circle at 100% 0%, rgba(255,255,255,0.1) 0%, transparent 20%),
+                    radial-gradient(circle at 0% 100%, rgba(255,255,255,0.1) 0%, transparent 20%);
+  mix-blend-mode: overlay;
+}
+
+/* Snow Animation */
+@keyframes snowfall {
+  0% { transform: translateY(-10vh) translateX(-10vw); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(110vh) translateX(20vw); opacity: 0; }
+}
+
+.snow-particle {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 8000;
+  box-shadow: 0 0 5px white;
+}
+
 /* Hover Beam Effect */
 .hover-beam {
   position: relative;

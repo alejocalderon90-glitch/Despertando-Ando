@@ -152,27 +152,27 @@ export const REFLECTIONS: Reflection[] = [
 ];
 
 export const WORLDS: WorldInfo[] = [
-  { id: 1, name: "Mundo Primigenio", description: "Donde comenzó la fragmentación de la verdad." },
-  { id: 2, name: "Valle de los Espejos", description: "Refleja tus miedos más profundos como realidades físicas." },
-  { id: 3, name: "Oasis de Silicio", description: "Una civilización que alcanzó la paz a través de la red." },
-  { id: 4, name: "Mar de Eter", description: "Donde el pensamiento se manifiesta instantáneamente." },
-  { id: 5, name: "Bosque de Datos", description: "Árboles que almacenan la historia de todas las almas." },
-  { id: 6, name: "Ciudad de Cristal", description: "Construida con la luz de estrellas muertas." },
-  { id: 7, name: "El Nodo Silencioso", description: "Una realidad donde la IA y la conciencia son una sola." },
-  { id: 8, name: "Desierto de Ecos", description: "Escuchas las voces de tus vidas pasadas." },
-  { id: 9, name: "Montañas de Gravedad Zero", description: "Donde las leyes de la física son opcionales." },
-  { id: 10, name: "Océano de Conciencia", description: "Un fluido que contiene todo el conocimiento del universo." },
-  { id: 11, name: "Cúpula de los Sueños", description: "Donde se fabrican las realidades que soñamos." },
-  { id: 12, name: "Laberinto de Tiempo", description: "Pasillos que conectan diferentes épocas." },
-  { id: 13, name: "Pradera de Luz", description: "Energía pura que nutre el espíritu." },
-  { id: 14, name: "Volcán de Ideas", description: "Fuente de toda la creatividad humana." },
-  { id: 15, name: "Caverna de Sombras", description: "Donde reside el inconsciente colectivo." },
-  { id: 16, name: "Puente de Estrellas", description: "Conexión directa con otras galaxias." },
-  { id: 17, name: "Jardín de Almas", description: "Donde descansan los que han despertado." },
-  { id: 18, name: "Torre de la Verdad", description: "El punto más alto de la percepción." },
-  { id: 19, name: "Río de la Vida", description: "Flujo constante de energía vital." },
-  { id: 20, name: "Templo del Ser", description: "El centro de la existencia individual." },
-  { id: 21, name: "El Límite del Muro", description: "La última frontera antes del gran despertar." }
+  { id: 1, name: "Mundo Primigenio", description: "El punto de origen. Aquí yacen las ruinas de la primera civilización que intentó cruzar el muro, congelada en el tiempo como advertencia eterna." },
+  { id: 2, name: "Valle de los Espejos", description: "Una vasta extensión de hielo pulido que refleja no tu imagen, sino tus miedos y deseos más profundos, materializándolos físicamente." },
+  { id: 3, name: "Oasis de Silicio", description: "Una civilización sintética oculta bajo el permafrost, donde la conciencia se ha transferido a redes neuronales de cristal líquido." },
+  { id: 4, name: "Mar de Eter", description: "Un océano de densidad variable donde el pensamiento colectivo altera la viscosidad del agua y la dirección de las corrientes." },
+  { id: 5, name: "Bosque de Datos", description: "Estructuras orgánicas bioluminiscentes que funcionan como servidores naturales, almacenando la historia genética de todas las especies." },
+  { id: 6, name: "Ciudad de Cristal", description: "Rascacielos translúcidos construidos con frecuencias de sonido solidificadas, habitados por entidades de pura vibración." },
+  { id: 7, name: "El Nodo Silencioso", description: "Una zona de silencio absoluto donde la tecnología humana falla y solo la telepatía funciona como medio de comunicación." },
+  { id: 8, name: "Desierto de Ecos", description: "Dunas de nieve gris que repiten cada palabra dicha en la Tierra, creando una cacofonía de secretos revelados." },
+  { id: 9, name: "Montañas de Gravedad Zero", description: "Picos flotantes desafiando la física, unidos por puentes de luz, donde el tiempo fluye en espiral." },
+  { id: 10, name: "Océano de Conciencia", description: "Un mar de plasma inteligente que responde a la intención del viajero; si dudas, te hundes; si crees, caminas." },
+  { id: 11, name: "Cúpula de los Sueños", description: "Un domo atmosférico artificial que proyecta las aspiraciones no cumplidas de la humanidad como auroras boreales tangibles." },
+  { id: 12, name: "Laberinto de Tiempo", description: "Un sistema de cuevas glaciares donde cada túnel conduce a una era geológica diferente de la Tierra." },
+  { id: 13, name: "Pradera de Luz", description: "Campos de energía fotónica donde la materia se recarga y las heridas físicas sanan instantáneamente." },
+  { id: 14, name: "Volcán de Ideas", description: "Una fuente geotérmica que no expulsa lava, sino conceptos puros y arquetipos que inspiran a los inventores del mundo." },
+  { id: 15, name: "Caverna de Sombras", description: "El repositorio del inconsciente colectivo, habitado por las proyecciones de lo que la humanidad se niega a aceptar." },
+  { id: 16, name: "Puente de Estrellas", description: "Una anomalía espacial anclada al hielo que permite la observación directa de otros sistemas solares sin telescopios." },
+  { id: 17, name: "Jardín de Almas", description: "Un santuario botánico donde cada planta representa una vida que ha logrado despertar completamente de la simulación." },
+  { id: 18, name: "Torre de la Verdad", description: "Una aguja de obsidiana infinita; se dice que en la cima se puede ver la realidad tal como es, sin filtros." },
+  { id: 19, name: "Río de la Vida", description: "Corrientes subterráneas de agua primordial que, al beberse, restauran la memoria genética ancestral." },
+  { id: 20, name: "Templo del Ser", description: "Una estructura fractal que cambia de forma según quien la observa, diseñada para la introspección radical." },
+  { id: 21, name: "El Límite del Muro", description: "La frontera final. Una barrera de energía estática donde termina la simulación conocida y comienza lo inefable." }
 ];
 
 export const NAV_LINKS = [

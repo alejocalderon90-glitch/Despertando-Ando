@@ -151,10 +151,10 @@ function App() {
   return (
     <div className="min-h-screen selection:bg-[#00f2ff] selection:text-black">
       {/* Loading Screen */}
-      <div className={`loading-screen ${accessGranted ? 'hidden' : ''}`}>
+      <div className={`loading-screen fixed inset-0 w-full h-full flex flex-col items-center justify-center z-[10000] ${accessGranted ? 'hidden' : ''}`}>
         <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin shadow-[0_0_20px_rgba(0,242,255,0.3)]"></div>
-        <div className="loading-text">Iniciando sistema...</div>
-        <div className="mt-4 text-[#00f2ff]/40 font-mono text-[10px] uppercase tracking-widest animate-pulse">
+        <div className="loading-text text-center">Iniciando sistema...</div>
+        <div className="mt-4 text-[#00f2ff]/40 font-mono text-[10px] uppercase tracking-widest animate-pulse text-center">
           Desencriptando realidad paralela...
         </div>
       </div>

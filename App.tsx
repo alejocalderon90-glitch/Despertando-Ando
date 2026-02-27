@@ -265,11 +265,6 @@ function App() {
 
       {/* Main Content - Hidden until access granted */}
       <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        {/* Frost Overlay */}
-        <div className="frost-overlay"></div>
-        <div className="frost-texture"></div>
-        <SnowParticles />
-
         {/* Custom Cursor */}
         <div 
           className="custom-cursor hidden md:block" 

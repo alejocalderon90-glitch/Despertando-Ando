@@ -81,7 +81,7 @@ export const Saga: React.FC = () => {
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#00f2ff] to-[#0066cc] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
           <img 
-            src="https://picsum.photos/seed/antarctica/800/1000" 
+            src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/despertando-ando/saga_cover.png" 
             alt="Alejandro y los Misterios de la Antártida" 
             className="relative rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
           />

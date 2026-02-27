@@ -133,19 +133,19 @@ const SnowParticles: React.FC = () => {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedY = Math.random() * 1 + 0.5;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.2;
+        this.size = Math.random() * 3 + 1; // Bigger flakes
+        this.speedY = Math.random() * 5 + 2; // Faster fall
+        this.speedX = Math.random() * 15 + 5; // Strong wind
+        this.opacity = Math.random() * 0.6 + 0.3;
       }
 
       update() {
         this.y += this.speedY;
         this.x += this.speedX;
 
-        if (this.y > canvas.height) {
+        if (this.y > canvas.height || this.x > canvas.width) {
           this.y = -10;
-          this.x = Math.random() * canvas.width;
+          this.x = Math.random() * canvas.width - canvas.width * 0.5; // Start from left/top
         }
       }
 
@@ -160,7 +160,7 @@ const SnowParticles: React.FC = () => {
 
     const init = () => {
       particles = [];
-      for (let i = 0; i < 100; i++) {
+      for (let i = 0; i < 300; i++) { // More particles
         particles.push(new SnowFlake());
       }
     };
@@ -185,8 +185,17 @@ const SnowParticles: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 z-[8000] pointer-events-none opacity-60" />;
+  return <canvas ref={canvasRef} className="fixed inset-0 z-[8000] pointer-events-none opacity-80 mix-blend-screen" />;
 };
+
+const Walker: React.FC = () => (
+  <div className="walker-container">
+    <div className="walker-figure">
+      <div className="walker-head"></div>
+      <div className="walker-backpack"></div>
+    </div>
+  </div>
+);
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -199,7 +208,7 @@ function App() {
     const timer = setTimeout(() => {
       setAccessGranted(true);
       setTimeout(() => setLoading(false), 1000); // Allow fade out
-    }, 2500);
+    }, 4000); // Longer load to enjoy the view
 
     // Custom cursor logic
     const moveCursor = (e: MouseEvent) => {
@@ -234,11 +243,23 @@ function App() {
   return (
     <div className="min-h-screen selection:bg-[#00f2ff] selection:text-black">
       {/* Loading Screen */}
-      <div className={`loading-screen fixed inset-0 w-full h-full flex flex-col items-center justify-center z-[10000] ${accessGranted ? 'hidden' : ''}`}>
-        <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin shadow-[0_0_20px_rgba(0,242,255,0.3)]"></div>
-        <div className="loading-text text-center">Iniciando sistema...</div>
-        <div className="mt-4 text-[#00f2ff]/40 font-mono text-[10px] uppercase tracking-widest animate-pulse text-center">
-          Desencriptando realidad paralela...
+      <div className={`loading-screen fixed inset-0 w-full h-full flex flex-col items-center justify-center z-[10000] overflow-hidden ${accessGranted ? 'hidden' : ''}`}>
+        {/* Storm Background */}
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518182170546-07661d42a560?q=80&w=2574&auto=format&fit=crop')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-90"></div>
+        
+        {/* Storm Effects */}
+        <div className="wind-gust" style={{ animationDelay: '0s' }}></div>
+        <div className="wind-gust" style={{ animationDelay: '1.5s' }}></div>
+        <SnowParticles />
+        <Walker />
+
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="w-24 h-24 border-2 border-[#00f2ff]/20 border-t-[#00f2ff] rounded-full animate-spin shadow-[0_0_20px_rgba(0,242,255,0.3)] backdrop-blur-sm"></div>
+          <div className="loading-text text-center mt-8 text-shadow-lg">Iniciando sistema...</div>
+          <div className="mt-4 text-[#00f2ff]/60 font-mono text-[10px] uppercase tracking-widest animate-pulse text-center bg-black/50 px-4 py-1 rounded-full backdrop-blur-md border border-[#00f2ff]/10">
+            Rastreando señal en Sector 9...
+          </div>
         </div>
       </div>
 

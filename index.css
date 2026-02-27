@@ -265,20 +265,83 @@ body {
   mix-blend-mode: overlay;
 }
 
-/* Snow Animation */
-@keyframes snowfall {
-  0% { transform: translateY(-10vh) translateX(-10vw); opacity: 0; }
-  20% { opacity: 1; }
-  100% { transform: translateY(110vh) translateX(20vw); opacity: 0; }
+/* Walker Animation */
+@keyframes walk {
+  0% { transform: translateX(-10vw) scaleX(1); }
+  100% { transform: translateX(110vw) scaleX(1); }
 }
 
-.snow-particle {
+@keyframes step {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.walker-container {
   position: fixed;
-  background: white;
+  bottom: 15%;
+  left: 0;
+  z-index: 8500;
+  animation: walk 20s linear infinite;
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.walker-figure {
+  width: 30px;
+  height: 60px;
+  background: #000;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  animation: step 0.8s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.walker-head {
+  width: 16px;
+  height: 16px;
+  background: #000;
   border-radius: 50%;
-  pointer-events: none;
+  position: absolute;
+  top: -18px;
+  left: 7px;
+}
+
+.walker-backpack {
+  width: 20px;
+  height: 30px;
+  background: #111;
+  position: absolute;
+  top: 5px;
+  left: -8px;
+  border-radius: 5px;
+}
+
+/* Enhanced Snow Storm */
+.storm-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1));
   z-index: 8000;
-  box-shadow: 0 0 5px white;
+  pointer-events: none;
+}
+
+/* Wind Gusts */
+@keyframes wind-gust {
+  0% { transform: translateX(-100%) skewX(-20deg); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: translateX(200%) skewX(-20deg); opacity: 0; }
+}
+
+.wind-gust {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  animation: wind-gust 3s linear infinite;
+  pointer-events: none;
+  z-index: 8100;
 }
 
 /* Hover Beam Effect */

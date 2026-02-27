@@ -80,10 +80,15 @@ export const Saga: React.FC = () => {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
         <div className="relative group">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#00f2ff] to-[#0066cc] rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+          {/* 
+            PARA USAR TU PROPIA IMAGEN:
+            1. Guarda tu archivo de imagen (ej: portada.jpg) en la carpeta 'public' del proyecto.
+            2. Cambia la propiedad src abajo a: "/portada.jpg"
+          */}
           <img 
-            src="https://raw.githubusercontent.com/stackblitz/stackblitz-images/main/despertando-ando/saga_cover.png" 
+            src="https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?q=80&w=2668&auto=format&fit=crop" 
             alt="Alejandro y los Misterios de la Antártida" 
-            className="relative rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
+            className="relative rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 aspect-[4/5] object-cover"
           />
           <div className="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-md">
             <h3 className="text-2xl font-mystery mb-2">21 Mundos. Un solo Muro.</h3>

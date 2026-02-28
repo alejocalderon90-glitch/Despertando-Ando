@@ -28,7 +28,7 @@ export const VoiceCall: React.FC = () => {
   const audioContextRef = useRef<AudioContext | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const processorRef = useRef<ScriptProcessorNode | null>(null);
-  const sessionRef = useRef<any>(null);
+  const sessionPromiseRef = useRef<Promise<any> | null>(null);
   const audioQueueRef = useRef<Int16Array[]>([]);
   const isPlayingRef = useRef(false);
 
@@ -67,31 +67,32 @@ export const VoiceCall: React.FC = () => {
       }
       
       // 4. Initialize Gemini Live
-      // Try multiple ways to get the API key for maximum compatibility (Vercel/AI Studio)
-      // Fallback to the key provided by the user if environment variables are missing
+      // Use the provided key or fallback to environment variables
       const providedKey = "AIzaSyCaTaBia9-inHbbp7cmOLEVk2s1b5vjU54";
-      const apiKey = process.env.GEMINI_API_KEY || 
+      const apiKey = providedKey || 
+                     process.env.GEMINI_API_KEY || 
                      (window as any).process?.env?.API_KEY || 
-                     (window as any).process?.env?.GEMINI_API_KEY || 
-                     providedKey;
+                     (window as any).process?.env?.GEMINI_API_KEY;
       
       if (!apiKey || apiKey === "undefined" || apiKey === "") {
-        throw new Error("Clave de API de Gemini no detectada. Por favor, asegúrate de que la variable GEMINI_API_KEY esté configurada.");
+        throw new Error("Clave de API de Gemini no detectada.");
       }
 
       const ai = new GoogleGenAI({ apiKey });
       
-      const sessionPromise = ai.live.connect({
+      // Store the promise so we can access the session inside callbacks
+      sessionPromiseRef.current = ai.live.connect({
         model: "gemini-2.5-flash-native-audio-preview-09-2025",
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
-            voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } }, // Puck is a good masculine voice
+            voiceConfig: { prebuiltVoiceConfig: { voiceName: "Puck" } },
           },
           systemInstruction: SYSTEM_INSTRUCTION,
         },
         callbacks: {
           onopen: () => {
+            console.log("Connection opened");
             setIsConnected(true);
             setIsConnecting(false);
             startStreaming();
@@ -103,9 +104,8 @@ export const VoiceCall: React.FC = () => {
                   const base64Data = part.inlineData.data;
                   const binaryString = atob(base64Data);
                   const bytes = new Uint8Array(binaryString.length);
-                  for (let i = 0; i < binaryString.length; i++) {
-                    bytes[i] = binaryString.charCodeAt(i);
-                  }
+                  // Convert Uint8 bytes to Int16 PCM
+                  // The data from Gemini is PCM 16-bit little endian
                   const pcmData = new Int16Array(bytes.buffer);
                   audioQueueRef.current.push(pcmData);
                   if (!isPlayingRef.current) {
@@ -115,20 +115,21 @@ export const VoiceCall: React.FC = () => {
               }
             }
             if (message.serverContent?.interrupted) {
+              console.log("Interrupted");
               audioQueueRef.current = [];
               isPlayingRef.current = false;
             }
           },
-          onclose: () => endCall(),
+          onclose: () => {
+            console.log("Connection closed");
+            endCall();
+          },
           onerror: (err) => {
             console.error("Live API Error:", err);
-            // Don't alert here to avoid spamming, just end the call
             endCall();
           }
         }
       });
-
-      sessionRef.current = await sessionPromise;
 
     } catch (err: any) {
       console.error("Failed to start call:", err);
@@ -139,7 +140,7 @@ export const VoiceCall: React.FC = () => {
   };
 
   const startStreaming = () => {
-    if (!audioContextRef.current || !streamRef.current || !sessionRef.current) return;
+    if (!audioContextRef.current || !streamRef.current || !sessionPromiseRef.current) return;
 
     const source = audioContextRef.current.createMediaStreamSource(streamRef.current);
     processorRef.current = audioContextRef.current.createScriptProcessor(4096, 1, 1);
@@ -157,6 +158,7 @@ export const VoiceCall: React.FC = () => {
       // Convert Float32 to Int16 PCM
       const pcmData = new Int16Array(inputData.length);
       for (let i = 0; i < inputData.length; i++) {
+        // Clamp and scale to 16-bit integer range
         pcmData[i] = Math.max(-1, Math.min(1, inputData[i])) * 0x7FFF;
       }
 
@@ -164,8 +166,13 @@ export const VoiceCall: React.FC = () => {
       const buffer = pcmData.buffer;
       const base64Data = btoa(String.fromCharCode(...new Uint8Array(buffer)));
 
-      sessionRef.current.sendRealtimeInput({
-        media: { data: base64Data, mimeType: 'audio/pcm;rate=16000' }
+      // Send to session
+      sessionPromiseRef.current?.then(session => {
+        session.sendRealtimeInput({
+          media: { data: base64Data, mimeType: 'audio/pcm;rate=16000' }
+        });
+      }).catch(err => {
+        console.error("Error sending audio:", err);
       });
     };
 
@@ -182,7 +189,7 @@ export const VoiceCall: React.FC = () => {
     isPlayingRef.current = true;
     const pcmData = audioQueueRef.current.shift()!;
     
-    // Convert Int16 PCM to Float32
+    // Convert Int16 PCM to Float32 for Web Audio API
     const float32Data = new Float32Array(pcmData.length);
     for (let i = 0; i < pcmData.length; i++) {
       float32Data[i] = pcmData[i] / 0x7FFF;
@@ -205,9 +212,9 @@ export const VoiceCall: React.FC = () => {
     setIsMuted(false);
     setVolume(0);
     
-    if (sessionRef.current) {
-      sessionRef.current.close();
-      sessionRef.current = null;
+    if (sessionPromiseRef.current) {
+      sessionPromiseRef.current.then(session => session.close()).catch(() => {});
+      sessionPromiseRef.current = null;
     }
     if (processorRef.current) {
       processorRef.current.disconnect();

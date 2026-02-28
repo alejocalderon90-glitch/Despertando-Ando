@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Minus, Sparkles, Bot } from 'lucide-react';
+import { MessageSquare, X, Send, Minus, Sparkles, Bot, PhoneCall } from 'lucide-react';
 import { createChatSession } from '../../services/gemini';
 
 interface Message {
@@ -81,6 +81,18 @@ export const ChatAgent: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center gap-2">
+              <a 
+                href="#llamada-alejandro" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  document.getElementById('llamada-alejandro')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="p-1.5 bg-[#00f2ff]/10 hover:bg-[#00f2ff]/20 text-[#00f2ff] rounded transition-colors mr-1"
+                title="Iniciar Llamada"
+              >
+                <PhoneCall size={16} />
+              </a>
               <button onClick={handleToggle} className="p-1 hover:bg-white/5 rounded text-zinc-500 transition-colors">
                 <Minus size={18} />
               </button>

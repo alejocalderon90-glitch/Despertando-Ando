@@ -24,6 +24,7 @@ export const VoiceCall: React.FC = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
   const [volume, setVolume] = useState(0);
+  const [error, setError] = useState<string | null>(null);
   
   const audioContextRef = useRef<AudioContext | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
@@ -40,6 +41,8 @@ export const VoiceCall: React.FC = () => {
   }, []);
 
   const startCall = async () => {
+    console.log("Starting call...");
+    setError(null);
     try {
       setIsConnecting(true);
       
@@ -49,7 +52,12 @@ export const VoiceCall: React.FC = () => {
       }
 
       // 2. Setup Audio Context
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
+      try {
+        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
+      } catch (e) {
+        console.warn("Could not set sample rate to 16000, falling back to default");
+        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      }
       
       // 3. Get Microphone Stream
       try {
@@ -63,7 +71,7 @@ export const VoiceCall: React.FC = () => {
         } else if (micErr.name === 'SecurityError') {
           throw new Error("Error de seguridad al intentar acceder al micrófono. Asegúrate de estar en HTTPS.");
         }
-        throw new Error("No se pudo acceder al micrófono.");
+        throw new Error("No se pudo acceder al micrófono: " + micErr.message);
       }
       
       // 4. Initialize Gemini Live
@@ -74,6 +82,8 @@ export const VoiceCall: React.FC = () => {
                      (window as any).process?.env?.API_KEY || 
                      (window as any).process?.env?.GEMINI_API_KEY;
       
+      console.log("API Key present:", !!apiKey);
+
       if (!apiKey || apiKey === "undefined" || apiKey === "") {
         throw new Error("Clave de API de Gemini no detectada.");
       }
@@ -126,6 +136,7 @@ export const VoiceCall: React.FC = () => {
           },
           onerror: (err) => {
             console.error("Live API Error:", err);
+            setError("Error de conexión: " + (err.message || "Desconocido"));
             endCall();
           }
         }
@@ -134,7 +145,7 @@ export const VoiceCall: React.FC = () => {
     } catch (err: any) {
       console.error("Failed to start call:", err);
       setIsConnecting(false);
-      alert(err.message || "No se pudo conectar con Alejandro.");
+      setError(err.message || "No se pudo conectar con Alejandro.");
       endCall();
     }
   };
@@ -241,7 +252,7 @@ export const VoiceCall: React.FC = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,242,255,0.05)_0%,_transparent_70%)] pointer-events-none"></div>
       
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <div className="mb-12 space-y-4 reveal">
+        <div className="mb-12 space-y-4">
           <div className="flex justify-center mb-6">
             <div className={`p-6 rounded-full border-2 transition-all duration-500 ${isConnected ? 'border-[#00f2ff] shadow-[0_0_30px_rgba(0,242,255,0.4)]' : 'border-zinc-800'}`}>
               <Activity className={isConnected ? 'text-[#00f2ff] animate-pulse' : 'text-zinc-600'} size={48} />
@@ -255,7 +266,12 @@ export const VoiceCall: React.FC = () => {
           </p>
         </div>
 
-        <div className="glass-card p-10 rounded-3xl border-[#00f2ff]/10 max-w-md mx-auto reveal">
+        <div className="glass-card p-10 rounded-3xl border-[#00f2ff]/10 max-w-md mx-auto">
+          {error && (
+            <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-200 text-sm">
+              {error}
+            </div>
+          )}
           {!isConnected ? (
             <div className="space-y-8">
               <div className="flex flex-col items-center gap-4">
